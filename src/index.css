@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Blacker Display';
+  src: url('/fonts/Blacker-Display-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blacker Display';
+  src: url('/fonts/Blacker-Display-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blacker Pro Text';
+  src: url('/fonts/Blacker-Pro-Text-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Los archivos demo de Blacker no incluyen numerales reales (marca de agua).
+   Se sustituyen SOLO los dígitos y la puntuación numérica por Cormorant Garamond
+   mediante unicode-range. Debe declararse después de las caras de Blacker. */
+@font-face {
+  font-family: 'Blacker Display';
+  src: url('https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 108%;
+  unicode-range: U+0030-0039, U+003A, U+002C, U+2013, U+2014;
+}
+
+@font-face {
+  font-family: 'Blacker Display';
+  src: url('https://fonts.gstatic.com/s/cormorantgaramond/v21/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtImSo.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+  size-adjust: 108%;
+  unicode-range: U+0030-0039, U+003A, U+002C, U+2013, U+2014;
+}
+
+@font-face {
+  font-family: 'Blacker Pro Text';
+  src: url('https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 108%;
+  unicode-range: U+0030-0039, U+003A, U+002C, U+2013, U+2014;
+}
+
+@font-face {
+  font-family: 'Blacker Pro Text';
+  src: url('https://fonts.gstatic.com/s/cormorantgaramond/v21/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtImSo.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+  size-adjust: 108%;
+  unicode-range: U+0030-0039, U+003A, U+002C, U+2013, U+2014;
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 92%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 92%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 92%;
+
+    --primary: 33 33% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 70%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 33 33% 44%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 33 33% 44%;
+
+    --radius: 0rem;
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 33 33% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 33 33% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .accent-divider {
+    @apply w-12 h-[1px] mx-auto;
+    background: hsl(33 33% 44%);
+  }
+
+  .accent-divider-wide {
+    @apply w-24 h-[1px] mx-auto;
+    background: hsl(33 33% 44%);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-36 px-6 md:px-12;
+  }
+
+  .sparkle {
+    display: inline-block;
+    color: hsl(33 33% 44% / 0.6);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 3%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 15%);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(33 33% 44% / 0.4);
+}
