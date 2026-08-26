@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import contactImg from "@/assets/contact-cocktail.jpg";
 import { trackReservationClick } from "@/lib/gtm";
+import { buildPrecomproUrl } from "@/lib/attribution";
 
 const Sparkle = () => (
   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="sparkle">
@@ -52,7 +53,7 @@ const ReservationSection = () => {
           </motion.p>
 
           <motion.a
-            href="https://sabine.precompro.com/?"
+            href={buildPrecomproUrl()}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackReservationClick("section_cta")}

@@ -6,6 +6,7 @@ import logoGold from "@/assets/logo-gold-transparent.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackReservationClick, trackWhatsAppClick, type WhatsAppLocation } from "@/lib/gtm";
+import { buildPrecomproUrl } from "@/lib/attribution";
 
 type CtaVariant = "precompro" | "brunch" | "contacto";
 
@@ -34,7 +35,7 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
   const ctaConfig = {
     precompro: {
       label: t("nav.reserve"),
-      href: "https://sabine.precompro.com/?",
+      href: buildPrecomproUrl(),
       onClick: () => trackReservationClick("navbar_cta"),
     },
     brunch: {

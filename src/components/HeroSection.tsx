@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import logoGold from "@/assets/sabine-script.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackReservationClick } from "@/lib/gtm";
+import { buildPrecomproUrl } from "@/lib/attribution";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -74,7 +75,7 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.a
-          href="https://sabine.precompro.com/?"
+          href={buildPrecomproUrl()}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackReservationClick("hero_cta")}

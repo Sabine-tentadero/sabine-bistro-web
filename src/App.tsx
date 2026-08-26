@@ -9,6 +9,7 @@ import Brunch from "./pages/Brunch";
 import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { captureAttribution } from "./lib/attribution";
 
 const queryClient = new QueryClient();
 
@@ -17,8 +18,17 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Re-captura por si el usuario navega interno con params UTM
+    captureAttribution();
   }, [pathname]);
 
+  return null;
+};
+
+const AttributionInit = () => {
+  useEffect(() => {
+    captureAttribution();
+  }, []);
   return null;
 };
 
@@ -29,6 +39,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <AttributionInit />
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
