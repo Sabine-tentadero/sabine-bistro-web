@@ -87,21 +87,6 @@ const MenuSection = () => {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="text-center mt-16"
-        >
-          <a
-            href="https://wa.me/573183534907?text=Hola%2C%20me%20gustar%C3%ADa%20ver%20el%20men%C3%BA%20completo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block font-body text-xs tracking-[0.3em] uppercase px-10 py-4 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-          >
-            Ver Menú Completo
-          </a>
-        </motion.div>
       </div>
     </section>
   );
