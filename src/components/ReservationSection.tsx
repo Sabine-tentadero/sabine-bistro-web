@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import contactImg from "@/assets/contact-cocktail.jpg";
 import { trackReservationClick } from "@/lib/gtm";
-import { buildPrecomproUrl } from "@/lib/attribution";
+import { usePrecomproUrl, refreshPrecomproHrefOnClick } from "@/lib/attribution";
 
 const Sparkle = () => (
   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="sparkle">
@@ -13,6 +13,7 @@ const Sparkle = () => (
 const ReservationSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const precomproUrl = usePrecomproUrl();
 
   return (
     <section id="reservations" className="relative overflow-hidden" ref={ref}>
@@ -53,10 +54,13 @@ const ReservationSection = () => {
           </motion.p>
 
           <motion.a
-            href={buildPrecomproUrl()}
+            href={precomproUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackReservationClick("section_cta")}
+            onClick={(e) => {
+              refreshPrecomproHrefOnClick(e);
+              trackReservationClick("section_cta");
+            }}
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.6 }}

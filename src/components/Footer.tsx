@@ -2,7 +2,7 @@ import { Instagram, Facebook } from "lucide-react";
 import logoGold from "@/assets/logo-gold-transparent.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackReservationClick } from "@/lib/gtm";
-import { buildPrecomproUrl } from "@/lib/attribution";
+import { usePrecomproUrl, refreshPrecomproHrefOnClick } from "@/lib/attribution";
 
 interface FooterProps {
   hideFloatingButtons?: boolean;
@@ -10,6 +10,7 @@ interface FooterProps {
 
 const Footer = ({ hideFloatingButtons = false }: FooterProps) => {
   const { t } = useLanguage();
+  const precomproUrl = usePrecomproUrl();
   return (
     <footer className="bg-background">
       <div className="max-w-5xl mx-auto px-6 md:px-12 py-20">
@@ -53,10 +54,13 @@ const Footer = ({ hideFloatingButtons = false }: FooterProps) => {
       {!hideFloatingButtons && (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
           <a
-            href={buildPrecomproUrl()}
+            href={precomproUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackReservationClick("floating_cta")}
+            onClick={(e) => {
+              refreshPrecomproHrefOnClick(e);
+              trackReservationClick("floating_cta");
+            }}
             className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
             aria-label="Reservar Mesa"
           >

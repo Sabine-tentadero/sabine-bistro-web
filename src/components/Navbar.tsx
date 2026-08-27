@@ -6,7 +6,7 @@ import logoGold from "@/assets/logo-gold-transparent.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackReservationClick, trackWhatsAppClick, type WhatsAppLocation } from "@/lib/gtm";
-import { buildPrecomproUrl } from "@/lib/attribution";
+import { usePrecomproUrl, refreshPrecomproHrefOnClick } from "@/lib/attribution";
 
 type CtaVariant = "precompro" | "brunch" | "contacto";
 
@@ -25,6 +25,7 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { t, lang } = useLanguage();
   const location = useLocation();
+  const precomproUrl = usePrecomproUrl();
 
   const navLinks = [
     { label: t("nav.home"), href: "/" },
@@ -35,18 +36,21 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
   const ctaConfig = {
     precompro: {
       label: t("nav.reserve"),
-      href: buildPrecomproUrl(),
-      onClick: () => trackReservationClick("navbar_cta"),
+      href: precomproUrl,
+      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
+        refreshPrecomproHrefOnClick(e);
+        trackReservationClick("navbar_cta");
+      },
     },
     brunch: {
       label: t("nav.reserve_brunch"),
       href: WHATSAPP_BRUNCH,
-      onClick: () => trackWhatsAppClick("brunch_hero_cta"),
+      onClick: (_e: React.MouseEvent<HTMLAnchorElement>) => trackWhatsAppClick("brunch_hero_cta"),
     },
     contacto: {
       label: t("nav.reserve_whatsapp"),
       href: WHATSAPP_CONTACTO,
-      onClick: () => trackWhatsAppClick("contact_reservation_cta"),
+      onClick: (_e: React.MouseEvent<HTMLAnchorElement>) => trackWhatsAppClick("contact_reservation_cta"),
     },
   };
 
@@ -141,8 +145,8 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
                 href={cta.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => {
-                  cta.onClick();
+                onClick={(e) => {
+                  cta.onClick(e);
                   setMobileOpen(false);
                 }}
                 className="font-body text-[10px] tracking-[0.25em] uppercase px-6 py-2.5 border border-foreground/20 text-foreground/60 hover:border-primary hover:text-primary transition-all duration-500 mt-2"

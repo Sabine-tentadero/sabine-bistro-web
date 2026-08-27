@@ -12,9 +12,15 @@
  * Este módulo hace exactamente eso:
  * 1. capture(): lee params relevantes del window.location.search y guarda en LS
  * 2. buildPrecomproUrl(base): construye URL con los params guardados concatenados
+ * 3. usePrecomproUrl(): hook React que retorna la URL siempre actualizada.
+ *    Necesario porque buildPrecomproUrl() llamado inline en JSX corre en render
+ *    ANTES de que useEffect capture attribution — el href quedaba congelado con
+ *    la base sin params (bug hasta 2026-08-27).
  *
  * Consumido por: HeroSection, Footer, Navbar, ReservationSection.
  */
+
+import { useEffect, useState, type MouseEvent } from "react";
 
 const STORAGE_KEY = 'sabine_attribution_v1';
 const TTL_MS = 90 * 24 * 60 * 60 * 1000; // 90 días (matches Google Ads lookback window)
@@ -111,4 +117,33 @@ export function buildPrecomproUrl(base: string = 'https://sabine.precompro.com/'
     if (value) url.searchParams.set(key, value);
   }
   return url.toString();
+}
+
+/**
+ * Hook React que devuelve la URL del widget Precompro con los params de atribución
+ * inyectados. Actualiza el state después del mount para que localStorage ya haya
+ * sido llenado por captureAttribution().
+ *
+ * Combinar con `refreshPrecomproHrefOnClick` en el onClick del <a> para cubrir el
+ * caso donde el usuario navega interno y adquiere nuevos params entre mount y click.
+ */
+export function usePrecomproUrl(base: string = 'https://sabine.precompro.com/'): string {
+  const [url, setUrl] = useState<string>(base);
+  useEffect(() => {
+    captureAttribution(); // idempotente · asegura LS actualizado antes de leer
+    setUrl(buildPrecomproUrl(base));
+  }, [base]);
+  return url;
+}
+
+/**
+ * Handler onClick que actualiza el href del <a> al momento del click con los
+ * params de atribución más recientes en localStorage. Cubre el edge case de
+ * left-click después de una re-captura (ej. ScrollToTop en route change).
+ */
+export function refreshPrecomproHrefOnClick(
+  e: MouseEvent<HTMLAnchorElement>,
+  base: string = 'https://sabine.precompro.com/'
+): void {
+  e.currentTarget.href = buildPrecomproUrl(base);
 }

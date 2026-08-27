@@ -3,11 +3,12 @@ import { useEffect, useRef } from "react";
 import logoGold from "@/assets/sabine-script.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackReservationClick } from "@/lib/gtm";
-import { buildPrecomproUrl } from "@/lib/attribution";
+import { usePrecomproUrl, refreshPrecomproHrefOnClick } from "@/lib/attribution";
 
 const HeroSection = () => {
   const { t } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const precomproUrl = usePrecomproUrl();
 
   useEffect(() => {
     const v = videoRef.current;
@@ -75,10 +76,13 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.a
-          href={buildPrecomproUrl()}
+          href={precomproUrl}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => trackReservationClick("hero_cta")}
+          onClick={(e) => {
+            refreshPrecomproHrefOnClick(e);
+            trackReservationClick("hero_cta");
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.2 }}
