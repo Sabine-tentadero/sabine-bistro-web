@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import { trackWhatsAppClick } from "@/lib/gtm";
 
 const WHATSAPP_BRUNCH =
-  "https://api.whatsapp.com/send/?phone=573183534907&text=Hola%2C+vengo+de+la+pagina+de+brunch+de+sabinebistro.com+y+me+gustaria+reservar+brunch+en+Sabine&type=phone_number&app_absent=0&utm_source=web&utm_medium=cta&utm_campaign=brunch_page";
+  "https://wa.me/573183534907?text=Hola%2C+vengo+de+la+pagina+de+brunch+de+sabinebistro.com+y+me+gustaria+reservar+brunch+en+Sabine";
 
 const OG_IMAGE =
   "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c7a8b0dc-d2fc-4680-bba4-0c3973a81f9a/id-preview-4ba92d38--a49d1195-b401-4c4d-92d9-615a3fde61f8.lovable.app-1771813080601.png";

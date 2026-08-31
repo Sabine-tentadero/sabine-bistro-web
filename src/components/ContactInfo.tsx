@@ -11,10 +11,10 @@ const Sparkle = () => (
 );
 
 const WHATSAPP_RESERVATION =
-  "https://api.whatsapp.com/send/?phone=573183534907&text=Hola%2C+vengo+de+la+pagina+de+contacto+de+sabinebistro.com+y+me+gustaria+hacer+una+reserva&type=phone_number&app_absent=0&utm_source=web&utm_medium=cta&utm_campaign=contact_reservation";
+  "https://wa.me/573183534907?text=Hola%2C+vengo+de+la+pagina+de+contacto+de+sabinebistro.com+y+me+gustaria+hacer+una+reserva";
 
 const WHATSAPP_EVENTS =
-  "https://api.whatsapp.com/send/?phone=573183534907&text=Hola%2C+vengo+de+la+pagina+de+contacto+de+sabinebistro.com+y+quiero+consultar+por+un+evento+privado+o+corporativo&type=phone_number&app_absent=0&utm_source=web&utm_medium=cta&utm_campaign=events";
+  "https://wa.me/573183534907?text=Hola%2C+vengo+de+la+pagina+de+contacto+de+sabinebistro.com+y+quiero+consultar+por+un+evento+privado+o+corporativo";
 
 const ContactInfo = () => {
   const ref = useRef(null);

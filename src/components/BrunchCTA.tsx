@@ -11,7 +11,7 @@ const Sparkle = () => (
 );
 
 const WHATSAPP_BRUNCH =
-  "https://api.whatsapp.com/send/?phone=573183534907&text=Hola%2C+vengo+de+la+pagina+de+brunch+de+sabinebistro.com+y+me+gustaria+reservar+brunch+en+Sabine&type=phone_number&app_absent=0&utm_source=web&utm_medium=cta&utm_campaign=brunch_page";
+  "https://wa.me/573183534907?text=Hola%2C+vengo+de+la+pagina+de+brunch+de+sabinebistro.com+y+me+gustaria+reservar+brunch+en+Sabine";
 
 const BrunchCTA = () => {
   const ref = useRef(null);
