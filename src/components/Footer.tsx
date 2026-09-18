@@ -1,4 +1,5 @@
 import { Instagram, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 import logoGold from "@/assets/logo-gold-transparent.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackReservationClick } from "@/lib/gtm";
@@ -46,8 +47,14 @@ const Footer = ({ hideFloatingButtons = false }: FooterProps) => {
           <div className="accent-divider mb-8 opacity-30" />
 
           <p className="font-body text-[9px] tracking-[0.2em] uppercase text-foreground/15">
-            © 2025 Sabine Bistro & Lounge
+            © 2026 Sabine Bistro & Lounge
           </p>
+          <Link
+            to="/politica-de-datos"
+            className="font-body text-[9px] tracking-[0.2em] uppercase text-foreground/15 hover:text-foreground/40 transition-colors duration-500 mt-3"
+          >
+            Política de tratamiento de datos
+          </Link>
         </div>
       </div>
 

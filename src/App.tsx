@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Brunch from "./pages/Brunch";
 import Contacto from "./pages/Contacto";
+import PoliticaDatos from "./pages/PoliticaDatos";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { captureAttribution } from "./lib/attribution";
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/brunch" element={<Brunch />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/politica-de-datos" element={<PoliticaDatos />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
