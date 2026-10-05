@@ -140,10 +140,22 @@ export function usePrecomproUrl(base: string = 'https://sabine.precompro.com/'):
  * Handler onClick que actualiza el href del <a> al momento del click con los
  * params de atribución más recientes en localStorage. Cubre el edge case de
  * left-click después de una re-captura (ej. ScrollToTop en route change).
+ *
+ * Conserva el parámetro `_gl` (fix 2026-10-05): el linker entre dominios de GA4
+ * (GTM-5SDTJZPJ) lo agrega al href en el mousedown, antes de este click. Al
+ * reconstruir el href se perdía → el widget creaba un client_id de GA4 distinto
+ * al del sitio y el `ga_client_id` que guarda Precompro no servía para cruzar.
  */
 export function refreshPrecomproHrefOnClick(
   e: MouseEvent<HTMLAnchorElement>,
   base: string = 'https://sabine.precompro.com/'
 ): void {
-  e.currentTarget.href = buildPrecomproUrl(base);
+  const next = new URL(buildPrecomproUrl(base));
+  try {
+    const gl = new URL(e.currentTarget.href).searchParams.get('_gl');
+    if (gl) next.searchParams.set('_gl', gl);
+  } catch {
+    // href inválido · seguimos sin _gl
+  }
+  e.currentTarget.href = next.toString();
 }
