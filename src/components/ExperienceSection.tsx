@@ -74,6 +74,15 @@ const ExperienceSection = () => {
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="font-display text-2xl sm:text-3xl md:text-4xl italic font-light text-foreground/90 mb-6 md:mb-8 text-center"
+          >
+            {t("exp.title")}
+          </motion.h2>
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}

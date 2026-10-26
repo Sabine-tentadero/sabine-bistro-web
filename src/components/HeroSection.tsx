@@ -44,8 +44,6 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center w-full max-w-3xl mx-auto px-5 sm:px-6">
-        <h1 className="sr-only">Sabine Bistro & Lounge — Restaurante en La Serrezuela, Cartagena</h1>
-
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,8 +61,17 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className="w-44 sm:w-56 md:w-72 lg:w-80 mx-auto mb-8 md:mb-10"
+          className="w-44 sm:w-56 md:w-72 lg:w-80 mx-auto mb-6 md:mb-8"
         />
+
+        <motion.h1
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="font-display text-xl sm:text-2xl md:text-3xl italic font-light text-foreground/90 leading-snug mb-4 md:mb-5 max-w-xl mx-auto"
+        >
+          {t("hero.h1")}
+        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0 }}

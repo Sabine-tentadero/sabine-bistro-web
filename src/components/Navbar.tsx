@@ -29,6 +29,7 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
 
   const navLinks = [
     { label: t("nav.home"), href: "/" },
+    { label: t("nav.menu"), href: "/menu" },
     { label: t("nav.brunch"), href: "/brunch" },
     { label: t("nav.contact"), href: "/contacto" },
   ];

@@ -4,6 +4,9 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import OccasionsSection from "@/components/OccasionsSection";
+import ReviewsSection from "@/components/ReviewsSection";
+import FaqSection, { FAQ_KEYS } from "@/components/FaqSection";
 import LocationSection from "@/components/LocationSection";
 import ReservationSection from "@/components/ReservationSection";
 import Footer from "@/components/Footer";
@@ -16,25 +19,34 @@ const Index = () => {
 
   const seo = {
     es: {
-      title: "Sabine Bistro & Lounge | Restaurante en La Serrezuela, Cartagena",
+      title: "Restaurante en Cartagena · Sabine Bistro & Lounge, La Serrezuela",
       description:
-        "Sabine Bistro & Lounge en La Serrezuela, Cartagena: American Bistró con cortes importados, ahumador, coctelería de autor, jazz y DJ nights. Reserva tu mesa.",
+        "Restaurante en Cartagena en La Serrezuela, Centro Histórico: cortes importados, ahumador, coctelería de autor, jazz y DJ. Abierto todos los días. Reserva tu mesa.",
     },
     en: {
-      title: "Sabine Bistro & Lounge | Restaurant in La Serrezuela, Cartagena",
+      title: "Restaurant in Cartagena · Sabine Bistro & Lounge, La Serrezuela",
       description:
-        "Sabine Bistro & Lounge in La Serrezuela, Cartagena: American Bistro with imported cuts, smoker, signature cocktails, jazz and DJ nights. Book your table.",
+        "Restaurant in Cartagena at La Serrezuela, Historic Center: imported cuts, smoker, signature cocktails, jazz and DJ. Open every day. Book your table.",
     },
   }[lang];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
+  const restaurant = {
     "@type": "Restaurant",
+    "@id": "https://sabinebistro.com/#restaurant",
     name: "Sabine Bistro & Lounge",
     url: "https://sabinebistro.com/",
     image: OG_IMAGE,
     description: seo.description,
-    servesCuisine: ["American", "French", "Bistro"],
+    servesCuisine: ["American", "French", "Bistro", "Steakhouse"],
+    hasMenu: "https://sabinebistro.com/menu",
+    containedInPlace: {
+      "@type": "Place",
+      name: "Centro Comercial La Serrezuela",
+    },
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: "https://sabine.precompro.com/",
+    },
     priceRange: "$$$",
     telephone: "+57 318 353 4907",
     acceptsReservations: "https://sabine.precompro.com/",
@@ -65,6 +77,20 @@ const Index = () => {
     ],
   };
 
+  const faq = {
+    "@type": "FAQPage",
+    mainEntity: FAQ_KEYS.map((k) => ({
+      "@type": "Question",
+      name: t(`faq.q${k}`),
+      acceptedAnswer: { "@type": "Answer", text: t(`faq.a${k}`) },
+    })),
+  };
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [restaurant, faq],
+  };
+
   return (
     <>
       <Seo
@@ -81,7 +107,10 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
+        <OccasionsSection />
+        <ReviewsSection />
         <LocationSection />
+        <FaqSection />
         <ReservationSection />
         <Footer />
       </main>

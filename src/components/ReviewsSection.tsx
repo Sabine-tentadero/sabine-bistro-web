@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Star, Quote } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const reviews = [
   {
@@ -37,6 +38,7 @@ const ReviewsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [active, setActive] = useState(0);
+  const { t } = useLanguage();
 
   return (
     <section id="reviews" className="section-padding bg-dark-gradient-reverse" ref={ref}>
@@ -47,7 +49,7 @@ const ReviewsSection = () => {
             animate={isInView ? { opacity: 1 } : {}}
             className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4"
           >
-            Opiniones
+            {t("rev.kicker")}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +57,7 @@ const ReviewsSection = () => {
             transition={{ delay: 0.2 }}
             className="font-display text-3xl md:text-5xl font-light"
           >
-            Lo que dicen nuestros <span className="italic text-gold-gradient">invitados</span>
+            {t("rev.title")}
           </motion.h2>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -77,7 +79,7 @@ const ReviewsSection = () => {
                 <Star key={i} size={16} className="fill-primary text-primary" />
               ))}
             </div>
-            <span className="font-body text-xs text-muted-foreground ml-2">209+ opiniones</span>
+            <span className="font-body text-xs text-muted-foreground ml-2">209+ {t("rev.count")}</span>
           </motion.div>
         </div>
 
