@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -34,16 +34,24 @@ const AttributionInit = () => {
   return null;
 };
 
-const App = () => (
+/** Proveedores comunes. El navegador y el prerender (entry-server.tsx) arman el mismo árbol. */
+export const Providers = ({ children, initialLang }: { children: ReactNode; initialLang?: "es" | "en" }) => (
   <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
+    <LanguageProvider initialLang={initialLang}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <AttributionInit />
-          <ScrollToTop />
-          <Routes>
+        {children}
+      </TooltipProvider>
+    </LanguageProvider>
+  </QueryClientProvider>
+);
+
+export const AppRoutes = () => (
+  <>
+    <AttributionInit />
+    <ScrollToTop />
+    <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/en/menu" element={<Menu />} />
@@ -52,11 +60,16 @@ const App = () => (
             <Route path="/politica-de-datos" element={<PoliticaDatos />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </LanguageProvider>
-  </QueryClientProvider>
+    </Routes>
+  </>
+);
+
+const App = () => (
+  <Providers>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  </Providers>
 );
 
 export default App;

@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const PoliticaDatos = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Seo
+        lang="es"
+        title="Política de tratamiento de datos | Sabine Bistro & Lounge"
+        description="Política de tratamiento de datos personales de Sabine Bistro & Lounge (Ley 1581 de 2012)."
+        canonical="https://sabinebistro.com/politica-de-datos"
+      />
       {/* Header */}
       <header className="border-b border-border">
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">

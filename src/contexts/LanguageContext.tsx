@@ -147,12 +147,23 @@ interface Ctx {
 
 const LanguageContext = createContext<Ctx | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+/** Idioma fijado por la URL (/en/… = inglés, /menu = español) o null si la página sigue la preferencia guardada. */
+export const idiomaDeRuta = (path: string): Lang | null =>
+  path === "/en" || path.startsWith("/en/") ? "en" : path === "/menu" ? "es" : null;
+
+export const LanguageProvider = ({ children, initialLang }: { children: ReactNode; initialLang?: Lang }) => {
+  // La primera pintura usa el idioma de la URL (español por defecto), igual que el HTML prerenderizado,
+  // para que React lo retome sin diferencias. La preferencia guardada se aplica justo después de montar.
   const [lang, setLangState] = useState<Lang>(() => {
+    if (initialLang) return initialLang;
     if (typeof window === "undefined") return "es";
-    const saved = localStorage.getItem("lang");
-    return saved === "en" || saved === "es" ? saved : "es";
+    return idiomaDeRuta(window.location.pathname) ?? "es";
   });
+
+  useEffect(() => {
+    const saved = localStorage.getItem("lang");
+    if ((saved === "en" || saved === "es") && saved !== lang && !idiomaDeRuta(window.location.pathname)) setLangState(saved);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     localStorage.setItem("lang", lang);
