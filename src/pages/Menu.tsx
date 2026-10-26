@@ -9,8 +9,8 @@ import { usePrecomproUrl, refreshPrecomproHrefOnClick } from "@/lib/attribution"
 import { cartaPara, formatoPrecio, idSeccion, ofertas, RUTA_MENU, type ItemCarta } from "@/lib/carta";
 
 const SITE = "https://sabinebistro.com";
-const OG_IMAGE =
-  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c7a8b0dc-d2fc-4680-bba4-0c3973a81f9a/id-preview-4ba92d38--a49d1195-b401-4c4d-92d9-615a3fde61f8.lovable.app-1771813080601.png";
+// Foto de la mesa (1200 × 628): portada de la página y vista previa al compartir.
+const OG_IMAGE = `${SITE}/hero-pagina-menu-sabine.jpg`;
 
 const TEXTOS = {
   es: {
@@ -21,6 +21,7 @@ const TEXTOS = {
     h1: "Menú",
     h1em: "Sabine",
     lead: "La carta completa con precios vigentes. Pisos 2 y 3 de La Serrezuela, Centro Histórico de Cartagena.",
+    fotoAlt: "Mesa de Sabine vista desde arriba con carpaccio, cortes, costillas ahumadas, pasta y burrata",
     secciones: "Secciones del menú",
     precios: "Precios en pesos colombianos (COP).",
     reservar: "Reservar mesa",
@@ -33,6 +34,7 @@ const TEXTOS = {
     h1: "Menu",
     h1em: "Sabine",
     lead: "The full menu with current prices. 2nd and 3rd floors of La Serrezuela, Cartagena's Old Town.",
+    fotoAlt: "Overhead view of a Sabine table with carpaccio, steaks, smoked ribs, pasta and burrata",
     secciones: "Menu sections",
     precios: "Prices in Colombian pesos (COP).",
     reservar: "Book a table",
@@ -116,13 +118,22 @@ const Menu = () => {
       <main>
         <Navbar ctaVariant="precompro" />
 
-        <section className="pt-36 md:pt-44 pb-10 px-6 md:px-12 text-center">
-          <p className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4">{t.kicker}</p>
-          <h1 className="font-display text-4xl md:text-6xl font-light">
+        <section className="relative isolate overflow-hidden min-h-[70svh] flex flex-col items-center justify-center pt-32 md:pt-36 pb-16 px-6 md:px-12 text-center">
+          <img
+            src="/hero-pagina-menu-sabine.webp"
+            alt={t.fotoAlt}
+            width={1200}
+            height={628}
+            className="absolute inset-0 -z-20 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/80 via-background/65 to-background" />
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,hsl(0_0%_3%/0.55),transparent_65%)]" />
+          <p className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4 [text-shadow:0_1px_8px_rgb(0_0_0/0.9)]">{t.kicker}</p>
+          <h1 className="font-display text-4xl md:text-6xl font-light [text-shadow:0_2px_16px_rgb(0_0_0/0.7)]">
             {t.h1} <span className="italic text-gold-gradient">{t.h1em}</span>
           </h1>
           <div className="gold-divider mt-6" />
-          <p className="font-body text-sm md:text-base text-muted-foreground mt-6 max-w-xl mx-auto">{t.lead}</p>
+          <p className="font-body text-sm md:text-base text-foreground/80 mt-6 max-w-xl mx-auto">{t.lead}</p>
           <a
             href={precomproUrl}
             target="_blank"
@@ -131,7 +142,7 @@ const Menu = () => {
               refreshPrecomproHrefOnClick(e);
               trackReservationClick("menu_cta");
             }}
-            className="inline-block mt-8 px-8 py-3 border border-primary text-primary font-body text-xs tracking-[0.3em] uppercase hover:bg-primary hover:text-primary-foreground transition-colors duration-500"
+            className="inline-block mt-8 px-8 py-3 border border-primary text-primary bg-background/40 backdrop-blur-sm font-body text-xs tracking-[0.3em] uppercase hover:bg-primary hover:text-primary-foreground transition-colors duration-500"
           >
             {t.reservar}
           </a>
