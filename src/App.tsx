@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Brunch from "./pages/Brunch";
+import Menu from "./pages/Menu";
 import Contacto from "./pages/Contacto";
 import PoliticaDatos from "./pages/PoliticaDatos";
 import NotFound from "./pages/NotFound";
@@ -44,6 +45,8 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/en/menu" element={<Menu />} />
             <Route path="/brunch" element={<Brunch />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/politica-de-datos" element={<PoliticaDatos />} />

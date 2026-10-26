@@ -1,0 +1,164 @@
+{
+  "slug": "sabine",
+  "fuentes": ["Menú Sabine Español.pdf"],
+  "cartas": [
+    {
+      "id": "carta",
+      "titulo": "Carta",
+      "secciones": [
+        {
+          "titulo": "Entradas",
+          "nota": null,
+          "items": [
+            { "nombre": "Tabla de pan de masa madre", "descripcion": "Al horno de leña, tapenade, tomáquet, mantequilla de tomillo y ajo rostizado.", "precio": 28800, "precios": null, "etiquetas": [] },
+            { "nombre": "Tostada de burrata", "descripcion": "Mix de setas, rúgula, balsámico, vinagreta, sobre pan de masa madre al horno de leña.", "precio": 54800, "precios": null, "etiquetas": [] },
+            { "nombre": "Montado Sabine", "descripcion": "Sobre baguette, con salsa de queso azul, rúgula, pera confitada y marañones tostados. *Adición de Bresaola o Salmón curado x $18.000*", "precio": 49800, "precios": null, "etiquetas": [] },
+            { "nombre": "Champiñones fondue", "descripcion": "Salteados en aceite de oliva,ajo y almendras con salsa de queso gruyere y vino blanco.", "precio": 39800, "precios": null, "etiquetas": [] },
+            { "nombre": "Provoleta", "descripcion": "Provolone al sartén de hierro, tostadas de masa madre, chimichurri y dulce de uchuvas.", "precio": 39800, "precios": null, "etiquetas": [] },
+            { "nombre": "Cóctel de langostinos", "descripcion": "Langostinos U10, salsa de tomate de la casa, aioli de horseradish, alcaparras fritas y limon.", "precio": 74800, "precios": null, "etiquetas": [] },
+            { "nombre": "Tartar de atún", "descripcion": "Atún maguro fresco, marinado en aceite de sésamo, worcestershire, vinagre de arroz y horseradish.", "precio": 60400, "precios": null, "etiquetas": [] },
+            { "nombre": "Tiradito de res", "descripcion": "Carpaccio Angus, cebolla crocante, rúgula, aioli trufado y lonjas de parmesano.", "precio": 57800, "precios": null, "etiquetas": [] },
+            { "nombre": "Tacos de panceta (3 unidades)", "descripcion": "Ahumada y caramelizada con miel picante y especias, cilantro, rábano encurtido y salsa verde.", "precio": 48800, "precios": null, "etiquetas": [] },
+            { "nombre": "Panceta acevichada", "descripcion": "Ahumada por 5 horas con leña seleccionada, acevichada y servida con tostadas de maíz y guacamole.", "precio": 58600, "precios": null, "etiquetas": [] },
+            { "nombre": "Dip de espinaca & alcachofa", "descripcion": "Servido con salsa de tomate y jalapeño, sour cream y tostadas de maíz.", "precio": 38800, "precios": null, "etiquetas": [] },
+            { "nombre": "Sopa de cebolla francesa", "descripcion": "Cebolla ocañera caramelizada, tostada de baguette horneado, quesos mozzarella, gruyere, gouda ahumado, puerro crocante y jerez.", "precio": 29800, "precios": null, "etiquetas": [] },
+            { "nombre": "Sopa del día", "descripcion": "Con tostada de pan de masa madre.", "precio": 23800, "precios": null, "etiquetas": [] },
+            { "nombre": "Coliflor al horno de leña", "descripcion": "Rostizado y bañado en salsa cremosa de Dijon, cebollín, aromatizado con aceite de trufa.", "precio": 42400, "precios": null, "etiquetas": [] },
+            { "nombre": "Chips de berenjena", "descripcion": "Con miel de dátiles y tzatziki.", "precio": 20400, "precios": null, "etiquetas": [] },
+            { "nombre": "Alitas de pollo", "descripcion": "Ahumadas y crocantes, acompañadas de BBQ o miel picante de la casa, zanahoria, apio y salsa de queso azul.", "precio": null, "precios": [{ "etiqueta": "5 u", "precio": 36400 }, { "etiqueta": "10 u", "precio": 42800 }], "etiquetas": [] }
+          ]
+        },
+        {
+          "titulo": "Ensaladas",
+          "nota": null,
+          "items": [
+            { "nombre": "Queso azul", "descripcion": "Mix de lechugas, queso azul, pera confitada, arándanos deshidratados, nueces caramelizadas, vinagreta de miel y Dijon.", "precio": 42800, "precios": null, "etiquetas": [] },
+            { "nombre": "Langostinos parrillados", "descripcion": "Mix de lechugas, langostinos parrillados con pesto, cebolla encurtida, aguacate, cebollín,tomate, garbanzos y habas con vinagreta cítrica.", "precio": 65400, "precios": null, "etiquetas": [] },
+            { "nombre": "Patilla, rugula y feta", "descripcion": "Patilla, miel, tajín, rugula, y queso feta con vinagreta de sésamo.", "precio": 39800, "precios": null, "etiquetas": [] },
+            { "nombre": "César clásica", "descripcion": "Lechuga crespa, parmesano reggiano croutons de sourdough y aderezo cesar (sin anchoas).", "precio": 40800, "precios": null, "etiquetas": [] },
+            { "nombre": "Adiciones", "descripcion": "Pollo al Grill, Salmón Ahumado, Panceta Ahumada, RoastBeef.", "precio": 15000, "precios": null, "etiquetas": [] }
+          ]
+        },
+        {
+          "titulo": "Pides de masa madre",
+          "nota": "Pizzeta al horno de leña",
+          "items": [
+            { "nombre": "Caprese", "descripcion": "Tomate rostizado, rúgula, bocconcini, nueces caramelizadas, pesto a base de albahaca y piñones.", "precio": 40800, "precios": null, "etiquetas": [] },
+            { "nombre": "Tartufo", "descripcion": "Setas, ricotta, rúgula, lonjas de granna padano y aceite de trufa.", "precio": 64400, "precios": null, "etiquetas": [] },
+            { "nombre": "Tomates secos al sol & queso de cabra", "descripcion": "Huevo de codorniz, tocino ahumado, tomates deshidratados al sol, mozzarella y queso de cabra.", "precio": 45600, "precios": null, "etiquetas": [] },
+            { "nombre": "Ahumada & picante", "descripcion": "Mozzarella, gouda ahumado, salami picante; salsa napolitana preparada con tomates en leña y lonjas de parmesano reggiano.", "precio": 50800, "precios": null, "etiquetas": [] },
+            { "nombre": "Brie, higos y almendras", "descripcion": "Queso brie, mermelada de higos, brotes y láminas de almendras.", "precio": 58400, "precios": null, "etiquetas": [] }
+          ]
+        },
+        {
+          "titulo": "Hamburguesas & sándwiches",
+          "nota": "Adición de Papas a la Francesa x $12.000",
+          "items": [
+            { "nombre": "Cheeseburger 190 gr", "descripcion": "100% Angus, queso cheddar, tocineta crispyy pepinillos.", "precio": null, "precios": [{ "etiqueta": "Sin papas", "precio": 38800 }, { "etiqueta": "Con papas", "precio": 44800 }], "etiquetas": [] },
+            { "nombre": "Blue-cheeseburger 190 gr", "descripcion": "100% Angus; salsa de queso azul, aioli de pesto, cebolla crujiente y lechuga.", "precio": null, "precios": [{ "etiqueta": "Sin papas", "precio": 44800 }, { "etiqueta": "Con papas", "precio": 54800 }], "etiquetas": [] },
+            { "nombre": "Mojo burger 190 gr", "descripcion": "100% Angus; aguacate en rodajas, queso manchego, cebolla a la parrilla, mojo cubano y aioli de tequila y limón.", "precio": null, "precios": [{ "etiqueta": "Sin papas", "precio": 44800 }, { "etiqueta": "Con papas", "precio": 54800 }], "etiquetas": [] },
+            { "nombre": "Veggie burger", "descripcion": "A base de garbanzo y setas, cebolla encurtida,queso feta, pesto cremoso, tomate y rúgula.", "precio": null, "precios": [{ "etiqueta": "Sin papas", "precio": 36400 }, { "etiqueta": "Con papas", "precio": 40400 }], "etiquetas": [] },
+            { "nombre": "Sandwich de picanha", "descripcion": "Angus certificado. En focaccia, mozzarella,gouda ahumado, cebolla braseada, aioli de ajo rostizado y chimichurri.", "precio": null, "precios": [{ "etiqueta": "Regular", "precio": 50400 }, { "etiqueta": "XL", "precio": 65800 }], "etiquetas": [] },
+            { "nombre": "Sandwich de costilla", "descripcion": "Baguette, costilla St. Louis ahumada y deshuesada, salsa BBQ, repollo braseado, aioli de chimichurri y ajo rostizado.", "precio": null, "precios": [{ "etiqueta": "Regular", "precio": 46400 }, { "etiqueta": "XL", "precio": 60800 }], "etiquetas": [] },
+            { "nombre": "French dip au jus", "descripcion": "Roast beef de colita de cuadril Angus, baguette francés hecho en casa, aioli de horseradish y au jus.", "precio": 52800, "precios": null, "etiquetas": [] },
+            { "nombre": "Sandwich de pollo apanado", "descripcion": "Buttermilk crispy filete de pollo, alioli de sriracha y limón, puerro crocante, pesto cremoso y rúgula.", "precio": 42600, "precios": null, "etiquetas": [] },
+            { "nombre": "Jumbo shrimp roll", "descripcion": "Langostinos en mantequilla de ajo y aioli de horseradish, pan brioche horneado a diario.", "precio": 66800, "precios": null, "etiquetas": [] }
+          ]
+        },
+        {
+          "titulo": "Principales",
+          "nota": null,
+          "items": [
+            { "nombre": "Filete de salmón al sartén", "descripcion": "Sobre papas aplastadas finalizadas en mantequilla de ajo y romero, espinaca salteada sobre aioli de limón.", "precio": 84600, "precios": null, "etiquetas": [] },
+            { "nombre": "Pesca del día", "descripcion": "En salsa meuniere, alcaparras fritas, brócoli con limón y parmesano.", "precio": 79800, "precios": null, "etiquetas": [] },
+            { "nombre": "Langostinos al sarten U12 x 5", "descripcion": "Al sartén con mantequilla, vino blanco y azafrán. Acompañados de tostadas de masa madre y ai oli de ajo rostizado.", "precio": 85600, "precios": null, "etiquetas": [] },
+            { "nombre": "Langostinos a la parilla U12 x 5", "descripcion": "A la brasa con miel picante de limón.Acompañados de tostadas de masa madre y ai oli de ajo rostizado.", "precio": 84800, "precios": null, "etiquetas": [] },
+            { "nombre": "Fettuccine cremoso de langostinos", "descripcion": "A base de ajo, tomillo, mantequilla, relladura de limón y horseradish", "precio": 74800, "precios": null, "etiquetas": [] },
+            { "nombre": "Panceta", "descripcion": "Ahumada por 5 horas con leña seleccionada, sobre hummus y cebolla encurtida.", "precio": 58800, "precios": null, "etiquetas": [] },
+            { "nombre": "T bone de cerdo 400 gr", "descripcion": "USA PRIME certificado. A la parrilla, o finalizado en sartén (pan-seared) con mantequilla avellanada de ajo rostizado y tomillo. *Acompañado de papas aplastadas al romero*", "precio": 68800, "precios": null, "etiquetas": [] },
+            { "nombre": "Pollo rotisserie", "descripcion": "Medio pollo, ahumado por 8 horas con leña seleccionada, rub de hierbas y cafe, salsa de yogurt griego y BBQ de la casa. *Acompañado de Coleslaw Pequeño*", "precio": 70400, "precios": null, "etiquetas": [] },
+            { "nombre": "Steak frites 300 gr", "descripcion": "Colita de cuadril. angus certified papas a la francesa y ai oli de horseradish.", "precio": 85800, "precios": null, "etiquetas": [] },
+            { "nombre": "Picanha 300 gr", "descripcion": "Angus certificado. Finalizado en sartén (pan-seared) con mantequilla avellanada de ajo rostizado y tomillo. *Escoge entre ensalada verde y habichuelas en mantequilla*", "precio": 115400, "precios": null, "etiquetas": [] },
+            { "nombre": "Lomo 300 gr", "descripcion": "Angus certificado. Finalizado en sartén (pan-seared) con mantequilla avellanada de ajo rostizado y tomillo. *Escoge entre ensalada verde y habichuelas en mantequilla*", "precio": 75800, "precios": null, "etiquetas": [] },
+            { "nombre": "NY steak 350 gr", "descripcion": "Angus certificado. A la parrilla, o finalizado en sartén (pan-seared) con mantequilla avellanada de ajo rostizado y tomillo. *Escoge entre ensalada verde y habichuelas en mantequilla*", "precio": 155400, "precios": null, "etiquetas": [] },
+            { "nombre": "Rib eye 400 g", "descripcion": "Angus certificado. A la parrilla, o finalizado en sartén (pan-seared) con mantequilla avellanada de ajo rostizado y tomillo. *Escoge entre ensalada verde y habichuelas en mantequilla*", "precio": 179400, "precios": null, "etiquetas": [] }
+          ]
+        },
+        {
+          "titulo": "Grill & smoked specials",
+          "nota": null,
+          "items": [
+            { "nombre": "Langosta a la parrilla 900 gr", "descripcion": "(De temporada y según disponibilidad - MP) Finalizada en mantequilla con perejil y limón.", "precio": null, "precios": null, "etiquetas": [] },
+            { "nombre": "Costilla de res Angus americana 600 gr", "descripcion": "Angus certificado. Ahumada por 8 horas con leña seleccionada y glaseada con salsa NY mumbo.", "precio": 230400, "precios": null, "etiquetas": [] },
+            { "nombre": "Brisket platter", "descripcion": "Pecho de angus certificado. Ahumado 10 horas, coleslaw, maíz cremoso, papas a la francesa y brioche.", "precio": null, "precios": [{ "etiqueta": "300 gr", "precio": 110800 }, { "etiqueta": "180 gr", "precio": 79400 }], "etiquetas": [] },
+            { "nombre": "Costilla St. Luis", "descripcion": "Ahumadas por 5 horas con leña seleccionada, BBQ de la casa y Coleslaw.", "precio": null, "precios": [{ "etiqueta": "500 gr", "precio": 80400 }, { "etiqueta": "250 gr", "precio": 66400 }], "etiquetas": [] },
+            { "nombre": "Costilla baby back 500 gr", "descripcion": "USA PRIME certificado. Ahumadas por 5 horas con leña seleccionada, BBQ de la casa y Coleslaw.", "precio": 90400, "precios": null, "etiquetas": [] }
+          ]
+        },
+        {
+          "titulo": "Escoge tu salsa",
+          "nota": null,
+          "items": [
+            { "nombre": "Chimichurri", "descripcion": null, "precio": null, "precios": null, "etiquetas": [] },
+            { "nombre": "Vino y balsámico", "descripcion": null, "precio": null, "precios": null, "etiquetas": [] },
+            { "nombre": "Pimienta", "descripcion": null, "precio": null, "precios": null, "etiquetas": [] },
+            { "nombre": "Bernesa", "descripcion": null, "precio": null, "precios": null, "etiquetas": [] }
+          ]
+        },
+        {
+          "titulo": "Acompañantes",
+          "nota": null,
+          "items": [
+            { "nombre": "Brócoli al horno con limón y parmesano", "descripcion": null, "precio": 29500, "precios": null, "etiquetas": [] },
+            { "nombre": "Espárragos a la parrilla con queso pecorino", "descripcion": null, "precio": 39500, "precios": null, "etiquetas": [] },
+            { "nombre": "Papas a la francesa", "descripcion": null, "precio": 25500, "precios": null, "etiquetas": [] },
+            { "nombre": "Papas a la francesa con salsa cheddar, sour cream, tocineta crispy y cebollín", "descripcion": null, "precio": 29500, "precios": null, "etiquetas": [] },
+            { "nombre": "Papas a la francesa trufadas", "descripcion": null, "precio": 39500, "precios": null, "etiquetas": [] },
+            { "nombre": "Papas aplastadas con espinaca, parmesano y aioli de limón", "descripcion": null, "precio": 39900, "precios": null, "etiquetas": [] },
+            { "nombre": "Puré de papa gratinado", "descripcion": null, "precio": 29800, "precios": null, "etiquetas": [] },
+            { "nombre": "French Mac & Cheese", "descripcion": "(créme fraiche,gruyere, breadcrumbs.)", "precio": 33000, "precios": null, "etiquetas": [] },
+            { "nombre": "Ensalada verde de lechuga, cebolla encurtida, aguacate, semillas de calabaza y aderezo Dijon", "descripcion": null, "precio": 25000, "precios": null, "etiquetas": [] },
+            { "nombre": "Coleslaw", "descripcion": null, "precio": 28000, "precios": null, "etiquetas": [] },
+            { "nombre": "Maíz dulce a la crema", "descripcion": null, "precio": 38000, "precios": null, "etiquetas": [] },
+            { "nombre": "Fettuccine cremoso", "descripcion": null, "precio": 39500, "precios": null, "etiquetas": [] }
+          ]
+        },
+        {
+          "titulo": "Kids menú",
+          "nota": null,
+          "items": [
+            { "nombre": "Chicken fingers", "descripcion": "Deditos de pollo apanados acompañados de papas a la francesa.", "precio": 39500, "precios": null, "etiquetas": [] },
+            { "nombre": "Chicken parma fettuccine", "descripcion": "Filete de pollo apanado, gratinado con salsa napolitana y fettuccine cremoso.", "precio": 38000, "precios": null, "etiquetas": [] },
+            { "nombre": "Pide bambino", "descripcion": "Pizzeta a base de napolitana y mozzarella. *Escoge dos toppings. (jamón, tocineta crispy, brócoli, champiñones, pollo, maicitos)", "precio": 39500, "precios": null, "etiquetas": [] },
+            { "nombre": "Mini burgers & fries", "descripcion": "100% Angus, queso cheddar, y salsa de tomate acompañadas de papas a la francesa.", "precio": 38000, "precios": null, "etiquetas": [] }
+          ]
+        },
+        {
+          "titulo": "Postres",
+          "nota": null,
+          "items": [
+            { "nombre": "Chewy cookie casserole (15 min)", "descripcion": "Recién horneada, rellena de arequipe y helado de vainilla.", "precio": 24600, "precios": null, "etiquetas": [] },
+            { "nombre": "Milo brownie de caramelo salado y Oreo", "descripcion": null, "precio": 24600, "precios": null, "etiquetas": [] },
+            { "nombre": "NY cheesecake", "descripcion": "Mermelada de arándanos y mora silvestre.", "precio": 24600, "precios": null, "etiquetas": [] },
+            { "nombre": "Flan de caramelo", "descripcion": null, "precio": 24600, "precios": null, "etiquetas": [] },
+            { "nombre": "Crepe de arequipe flambeado con bourbon", "descripcion": "Con costra de caramelo y helado.", "precio": 24600, "precios": null, "etiquetas": [] },
+            { "nombre": "Sticky toffee", "descripcion": "Torta húmeda de dátiles, toffee caliente y helado de vainilla.", "precio": 24600, "precios": null, "etiquetas": [] },
+            { "nombre": "Tres leches", "descripcion": null, "precio": 24600, "precios": null, "etiquetas": [] },
+            { "nombre": "Crumble de manzana (15 min)", "descripcion": "Servido tibio y acompañado de helado de vainilla.", "precio": 24600, "precios": null, "etiquetas": [] }
+          ]
+        }
+      ]
+    }
+  ],
+  "notas": [
+    "Precios con impuestos incluido / Precios en pesos colombianos",
+    "La Serrezuela Centro Cultural, Piso 2 | Casco Antiguo, Cartagena de Indias",
+    "ADVERTENCIA PROPINA: Se informa a los consumidores que este establecimiento de comercio sugiere a sus consumidores una propina correspondiente al 10% del valor de la cuenta, el cual podrá ser aceptado, rechazado o modificado por usted, de acuerdo con su valoración del servicio prestado. Al momento de solicitar la cuenta, indíquele a la persona que lo atiende si quiere que dicho valor sea o no incluido en la factura o indíquele el valor que quiere dar como propina. En este establecimiento de comercio los dineros recogidos por concepto de propina se destinan el 100% entre los trabajadores del área de servicios de Alimentos y Bebidas, el cual administra el Comité de Propinas, conformado por los mismos trabajadores. En caso de que tenga algún inconveniente con el cobro de la propina, comuníquese con la Línea exclusiva dispuesta en Bogotá para atender las inquietudes sobre el tema: 651 3240 o a la Línea de Atención al Ciudadano de la Superintendencia de Industria y Comercio: 592 0400"
+  ],
+  "dudas": [
+    "franja 3 (Grill & smoked specials) · Langosta a la parrilla 900 gr: no lleva cifra, el menú imprime 'Precio del mercado' (MP); se dejó precio null.",
+    "franja 2 (Hamburguesas) · los precios de la primera columna no llevan rótulo impreso; solo el segundo dice 'CON PAPAS'. Se rotularon 'Sin papas' / 'Con papas'. La diferencia no es constante (Cheeseburger +6.000, Blue y Mojo +10.000, Veggie +4.000) y no coincide con la 'Adición de papas x $12.000' de la nota: cifras transcritas tal cual, conviene confirmarlas con el restaurante.",
+    "franja 5 (Kids menú) · el segundo $38.000 está impreso entre Pide bambino y Mini burgers & fries, un poco más arriba del nombre; se asignó a Mini burgers & fries por la alineación del resto de la columna.",
+    "Toda la carta es de comida: el PDF no trae sección de bebidas, por eso va en una sola carta 'Carta'."
+  ]
+}

@@ -8,6 +8,7 @@ const translations: Record<Lang, Dict> = {
   es: {
     // Navbar
     "nav.home": "Inicio",
+    "nav.menu": "Menú",
     "nav.brunch": "Brunch",
     "nav.contact": "Contacto",
     "nav.location": "Ubicación",
@@ -73,6 +74,7 @@ const translations: Record<Lang, Dict> = {
   en: {
     // Navbar
     "nav.home": "Home",
+    "nav.menu": "Menu",
     "nav.brunch": "Brunch",
     "nav.contact": "Contact",
     "nav.location": "Location",

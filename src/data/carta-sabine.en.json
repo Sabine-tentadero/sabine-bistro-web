@@ -1,0 +1,155 @@
+{
+  "cartas": [
+    {
+      "titulo": "Menu",
+      "secciones": [
+        {
+          "titulo": "Starters",
+          "nota": null,
+          "items": [
+            { "nombre": "Sourdough bread board", "descripcion": "Wood-fired, with tapenade, tomàquet (tomato spread), thyme butter and roasted garlic.", "precios": null },
+            { "nombre": "Burrata toast", "descripcion": "Mixed mushrooms, arugula, balsamic and vinaigrette on wood-fired sourdough bread.", "precios": null },
+            { "nombre": "Montado Sabine (open-faced toast)", "descripcion": "On baguette, with blue cheese sauce, arugula, poached pear and toasted cashews. *Add bresaola or cured salmon for $18.000*", "precios": null },
+            { "nombre": "Mushroom fondue", "descripcion": "Sautéed in olive oil, garlic and almonds, with Gruyère and white wine cheese sauce.", "precios": null },
+            { "nombre": "Provoleta (grilled provolone)", "descripcion": "Provolone in a cast-iron skillet, sourdough toasts, chimichurri and goldenberry jam.", "precios": null },
+            { "nombre": "Shrimp cocktail", "descripcion": "U10 prawns, house tomato sauce, horseradish aioli, fried capers and lime.", "precios": null },
+            { "nombre": "Tuna tartare", "descripcion": "Fresh maguro tuna marinated in sesame oil, Worcestershire, rice vinegar and horseradish.", "precios": null },
+            { "nombre": "Beef tiradito", "descripcion": "Angus carpaccio, crispy onion, arugula, truffle aioli and Parmesan shavings.", "precios": null },
+            { "nombre": "Pork belly tacos (3 pieces)", "descripcion": "Smoked and caramelized with spicy honey and spices, cilantro, pickled radish and salsa verde.", "precios": null },
+            { "nombre": "Pork belly ceviche-style", "descripcion": "Smoked for 5 hours over selected firewood, ceviche-style, served with corn tostadas and guacamole.", "precios": null },
+            { "nombre": "Spinach & artichoke dip", "descripcion": "Served with tomato and jalapeño salsa, sour cream and corn tostadas.", "precios": null },
+            { "nombre": "French onion soup", "descripcion": "Caramelized Ocaña onion, baked baguette toast, mozzarella, Gruyère and smoked Gouda cheeses, crispy leek and sherry.", "precios": null },
+            { "nombre": "Soup of the day", "descripcion": "With sourdough toast.", "precios": null },
+            { "nombre": "Wood-fired cauliflower", "descripcion": "Roasted and topped with creamy Dijon sauce and chives, finished with truffle oil.", "precios": null },
+            { "nombre": "Eggplant chips", "descripcion": "With date honey and tzatziki.", "precios": null },
+            { "nombre": "Chicken wings", "descripcion": "Smoked and crispy, with BBQ or house spicy honey, carrot, celery and blue cheese sauce.", "precios": ["5 pcs", "10 pcs"] }
+          ]
+        },
+        {
+          "titulo": "Salads",
+          "nota": null,
+          "items": [
+            { "nombre": "Blue cheese", "descripcion": "Mixed greens, blue cheese, poached pear, dried cranberries, candied walnuts, honey Dijon vinaigrette.", "precios": null },
+            { "nombre": "Grilled shrimp", "descripcion": "Mixed greens, grilled prawns with pesto, pickled onion, avocado, chives, tomato, chickpeas and fava beans with citrus vinaigrette.", "precios": null },
+            { "nombre": "Watermelon, arugula and feta", "descripcion": "Watermelon, honey, Tajín, arugula and feta cheese with sesame vinaigrette.", "precios": null },
+            { "nombre": "Classic Caesar", "descripcion": "Curly lettuce, Parmigiano Reggiano, sourdough croutons and Caesar dressing (no anchovies).", "precios": null },
+            { "nombre": "Add-ons", "descripcion": "Grilled chicken, smoked salmon, smoked pork belly, roast beef.", "precios": null }
+          ]
+        },
+        {
+          "titulo": "Sourdough pides",
+          "nota": "Wood-fired flatbread pizzas",
+          "items": [
+            { "nombre": "Caprese", "descripcion": "Roasted tomato, arugula, bocconcini, candied walnuts, basil and pine nut pesto.", "precios": null },
+            { "nombre": "Tartufo", "descripcion": "Mushrooms, ricotta, arugula, Grana Padano shavings and truffle oil.", "precios": null },
+            { "nombre": "Sun-dried tomato & goat cheese", "descripcion": "Quail egg, smoked bacon, sun-dried tomatoes, mozzarella and goat cheese.", "precios": null },
+            { "nombre": "Smoky & spicy", "descripcion": "Mozzarella, smoked Gouda, spicy salami; Neapolitan sauce made with wood-fired tomatoes and Parmigiano Reggiano shavings.", "precios": null },
+            { "nombre": "Brie, figs and almonds", "descripcion": "Brie cheese, fig jam, sprouts and sliced almonds.", "precios": null }
+          ]
+        },
+        {
+          "titulo": "Burgers & sandwiches",
+          "nota": "Add French fries for $12.000",
+          "items": [
+            { "nombre": "Cheeseburger 190 g", "descripcion": "100% Angus, cheddar cheese, crispy bacon and pickles.", "precios": ["Without fries", "With fries"] },
+            { "nombre": "Blue cheeseburger 190 g", "descripcion": "100% Angus; blue cheese sauce, pesto aioli, crispy onion and lettuce.", "precios": ["Without fries", "With fries"] },
+            { "nombre": "Mojo burger 190 g", "descripcion": "100% Angus; sliced avocado, Manchego cheese, grilled onion, Cuban mojo and tequila-lime aioli.", "precios": ["Without fries", "With fries"] },
+            { "nombre": "Veggie burger", "descripcion": "Chickpea and mushroom patty, pickled onion, feta cheese, creamy pesto, tomato and arugula.", "precios": ["Without fries", "With fries"] },
+            { "nombre": "Picanha sandwich", "descripcion": "Certified Angus. On focaccia, with mozzarella, smoked Gouda, braised onion, roasted garlic aioli and chimichurri.", "precios": ["Regular", "XL"] },
+            { "nombre": "Rib sandwich", "descripcion": "Baguette, smoked boneless St. Louis ribs, BBQ sauce, braised cabbage, chimichurri and roasted garlic aioli.", "precios": ["Regular", "XL"] },
+            { "nombre": "French dip au jus", "descripcion": "Angus tri-tip roast beef, house-made French baguette, horseradish aioli and au jus.", "precios": null },
+            { "nombre": "Crispy chicken sandwich", "descripcion": "Buttermilk crispy chicken fillet, sriracha-lime aioli, crispy leek, creamy pesto and arugula.", "precios": null },
+            { "nombre": "Jumbo shrimp roll", "descripcion": "Prawns in garlic butter and horseradish aioli, on brioche baked daily.", "precios": null }
+          ]
+        },
+        {
+          "titulo": "Mains",
+          "nota": null,
+          "items": [
+            { "nombre": "Pan-seared salmon fillet", "descripcion": "On smashed potatoes finished in garlic and rosemary butter, sautéed spinach over lemon aioli.", "precios": null },
+            { "nombre": "Catch of the day", "descripcion": "In meunière sauce, fried capers, broccoli with lemon and Parmesan.", "precios": null },
+            { "nombre": "Pan-seared prawns U12 x 5", "descripcion": "Pan-seared with butter, white wine and saffron. Served with sourdough toasts and roasted garlic aioli.", "precios": null },
+            { "nombre": "Grilled prawns U12 x 5", "descripcion": "Grilled with spicy lime honey. Served with sourdough toasts and roasted garlic aioli.", "precios": null },
+            { "nombre": "Creamy shrimp fettuccine", "descripcion": "With garlic, thyme, butter, lemon zest and horseradish.", "precios": null },
+            { "nombre": "Pork belly", "descripcion": "Smoked for 5 hours over selected firewood, on hummus and pickled onion.", "precios": null },
+            { "nombre": "Pork T-bone 400 g", "descripcion": "Certified USDA Prime. Grilled, or pan-seared, with roasted garlic and thyme brown butter. *Served with rosemary smashed potatoes*", "precios": null },
+            { "nombre": "Rotisserie chicken", "descripcion": "Half chicken, smoked for 8 hours over selected firewood, herb and coffee rub, Greek yogurt sauce and house BBQ. *Served with a small coleslaw*", "precios": null },
+            { "nombre": "Steak frites 300 g", "descripcion": "Certified Angus tri-tip, French fries and horseradish aioli.", "precios": null },
+            { "nombre": "Picanha 300 g", "descripcion": "Certified Angus. Pan-seared with roasted garlic and thyme brown butter. *Choice of green salad or buttered green beans*", "precios": null },
+            { "nombre": "Tenderloin 300 g", "descripcion": "Certified Angus. Pan-seared with roasted garlic and thyme brown butter. *Choice of green salad or buttered green beans*", "precios": null },
+            { "nombre": "NY strip 350 g", "descripcion": "Certified Angus. Grilled, or pan-seared, with roasted garlic and thyme brown butter. *Choice of green salad or buttered green beans*", "precios": null },
+            { "nombre": "Rib eye 400 g", "descripcion": "Certified Angus. Grilled, or pan-seared, with roasted garlic and thyme brown butter. *Choice of green salad or buttered green beans*", "precios": null }
+          ]
+        },
+        {
+          "titulo": "Grill & smoked specials",
+          "nota": null,
+          "items": [
+            { "nombre": "Grilled lobster 900 g", "descripcion": "(Seasonal and subject to availability - market price) Finished in butter with parsley and lemon.", "precios": null },
+            { "nombre": "American Angus beef ribs 600 g", "descripcion": "Certified Angus. Smoked for 8 hours over selected firewood and glazed with NY mumbo sauce.", "precios": null },
+            { "nombre": "Brisket platter", "descripcion": "Certified Angus brisket. Smoked for 10 hours, with coleslaw, creamed corn, French fries and brioche.", "precios": ["300 g", "180 g"] },
+            { "nombre": "St. Louis ribs", "descripcion": "Smoked for 5 hours over selected firewood, with house BBQ and coleslaw.", "precios": ["500 g", "250 g"] },
+            { "nombre": "Baby back ribs 500 g", "descripcion": "Certified USDA Prime. Smoked for 5 hours over selected firewood, with house BBQ and coleslaw.", "precios": null }
+          ]
+        },
+        {
+          "titulo": "Choose your sauce",
+          "nota": null,
+          "items": [
+            { "nombre": "Chimichurri", "descripcion": null, "precios": null },
+            { "nombre": "Red wine and balsamic", "descripcion": null, "precios": null },
+            { "nombre": "Peppercorn", "descripcion": null, "precios": null },
+            { "nombre": "Béarnaise", "descripcion": null, "precios": null }
+          ]
+        },
+        {
+          "titulo": "Sides",
+          "nota": null,
+          "items": [
+            { "nombre": "Oven-roasted broccoli with lemon and Parmesan", "descripcion": null, "precios": null },
+            { "nombre": "Grilled asparagus with pecorino cheese", "descripcion": null, "precios": null },
+            { "nombre": "French fries", "descripcion": null, "precios": null },
+            { "nombre": "French fries with cheddar sauce, sour cream, crispy bacon and chives", "descripcion": null, "precios": null },
+            { "nombre": "Truffle fries", "descripcion": null, "precios": null },
+            { "nombre": "Smashed potatoes with spinach, Parmesan and lemon aioli", "descripcion": null, "precios": null },
+            { "nombre": "Mashed potato gratin", "descripcion": null, "precios": null },
+            { "nombre": "French mac & cheese", "descripcion": "(crème fraîche, Gruyère, breadcrumbs)", "precios": null },
+            { "nombre": "Green salad with lettuce, pickled onion, avocado, pumpkin seeds and Dijon dressing", "descripcion": null, "precios": null },
+            { "nombre": "Coleslaw", "descripcion": null, "precios": null },
+            { "nombre": "Creamed sweet corn", "descripcion": null, "precios": null },
+            { "nombre": "Creamy fettuccine", "descripcion": null, "precios": null }
+          ]
+        },
+        {
+          "titulo": "Kids menu",
+          "nota": null,
+          "items": [
+            { "nombre": "Chicken fingers", "descripcion": "Breaded chicken fingers with French fries.", "precios": null },
+            { "nombre": "Chicken parma fettuccine", "descripcion": "Breaded chicken fillet au gratin with Neapolitan sauce and creamy fettuccine.", "precios": null },
+            { "nombre": "Pide bambino (kids' flatbread pizza)", "descripcion": "Flatbread pizza with Neapolitan sauce and mozzarella. *Choose two toppings (ham, crispy bacon, broccoli, mushrooms, chicken, baby corn)", "precios": null },
+            { "nombre": "Mini burgers & fries", "descripcion": "100% Angus, cheddar cheese and ketchup, served with French fries.", "precios": null }
+          ]
+        },
+        {
+          "titulo": "Desserts",
+          "nota": null,
+          "items": [
+            { "nombre": "Chewy cookie casserole (15 min)", "descripcion": "Freshly baked, filled with arequipe (dulce de leche) and vanilla ice cream.", "precios": null },
+            { "nombre": "Milo brownie with salted caramel and Oreo", "descripcion": null, "precios": null },
+            { "nombre": "NY cheesecake", "descripcion": "Blueberry and wild blackberry jam.", "precios": null },
+            { "nombre": "Caramel flan", "descripcion": null, "precios": null },
+            { "nombre": "Arequipe crêpe flambéed with bourbon", "descripcion": "With a caramel crust and ice cream.", "precios": null },
+            { "nombre": "Sticky toffee", "descripcion": "Moist date cake, hot toffee and vanilla ice cream.", "precios": null },
+            { "nombre": "Tres leches (three-milk cake)", "descripcion": null, "precios": null },
+            { "nombre": "Apple crumble (15 min)", "descripcion": "Served warm with vanilla ice cream.", "precios": null }
+          ]
+        }
+      ]
+    }
+  ],
+  "notas": [
+    "Prices include taxes / Prices in Colombian pesos",
+    "La Serrezuela Cultural Center, 2nd floor | Old Town (Casco Antiguo), Cartagena de Indias",
+    "TIP NOTICE: Customers are informed that this establishment suggests a tip of 10% of the bill, which you may accept, decline or change according to your assessment of the service provided. When you ask for the bill, tell your server whether you want this amount included on the invoice or not, or tell them the amount you wish to give as a tip. At this establishment, 100% of the money collected as tips is distributed among the Food and Beverage service staff and managed by the Tip Committee, made up of the staff themselves. If you have any issue with the tip charge, please contact the dedicated line in Bogotá for questions on this matter: 651 3240, or the Citizen Service Line of the Superintendence of Industry and Commerce: 592 0400"
+  ]
+}

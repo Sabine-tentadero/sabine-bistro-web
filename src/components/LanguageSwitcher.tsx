@@ -1,4 +1,6 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { RUTA_MENU } from "@/lib/carta";
 
 interface Props {
   className?: string;
@@ -8,7 +10,15 @@ const LanguageSwitcher = ({ className = "" }: Props) => {
   const { lang, setLang } = useLanguage();
   const isEn = lang === "en";
 
-  const toggle = () => setLang(isEn ? "es" : "en");
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const toggle = () => {
+    const nuevo = isEn ? "es" : "en";
+    setLang(nuevo);
+    // El menú tiene una URL por idioma (/menu · /en/menu): el selector lleva a la otra.
+    if (pathname === RUTA_MENU.es || pathname === RUTA_MENU.en) navigate(RUTA_MENU[nuevo]);
+  };
 
   return (
     <button
