@@ -3,6 +3,7 @@ import Seo from "@/components/Seo";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import BrunchAbout from "@/components/BrunchAbout";
+import BrunchMenu, { PRECIOS_BRUNCH } from "@/components/BrunchMenu";
 import BrunchGallery from "@/components/BrunchGallery";
 import LocationSection from "@/components/LocationSection";
 import BrunchCTA from "@/components/BrunchCTA";
@@ -22,12 +23,12 @@ const Brunch = () => {
     es: {
       title: "Brunch de Bistró Americano en Cartagena Sábados 10:30 a.m. — 1:30 p.m. | Sabine Bistro & Lounge — La Serrezuela",
       description:
-        "Brunch de bistró americano los sábados de 10:30 a.m. a 1:30 p.m. en Sabine Bistro & Lounge, La Serrezuela, Cartagena. Cocina contemporánea, coctelería y ambiente único. Reserva tu brunch por WhatsApp.",
+        "Brunch all you can eat los sábados de 10:30 a.m. a 1:30 p.m. en Sabine Bistro & Lounge, La Serrezuela, Cartagena: huevos al gusto, estaciones, sushi, ceviche y postres. $160.000 por persona, $80.000 niños. Reserva por WhatsApp.",
     },
     en: {
       title: "American Bistro Brunch in Cartagena Saturdays 10:30 a.m. — 1:30 p.m. | Sabine Bistro & Lounge — Old Town",
       description:
-        "American bistro brunch every Saturday from 10:30 a.m. to 1:30 p.m. at Sabine Bistro & Lounge, La Serrezuela, Cartagena old town. Contemporary cuisine, craft cocktails and unique atmosphere. Book on WhatsApp.",
+        "All-you-can-eat brunch every Saturday from 10:30 a.m. to 1:30 p.m. at Sabine Bistro & Lounge, La Serrezuela, Cartagena old town: eggs your way, food stations, sushi, ceviche and desserts. COP 160,000 per person, COP 80,000 kids. Book on WhatsApp.",
     },
   }[lang];
 
@@ -42,6 +43,23 @@ const Brunch = () => {
     priceRange: "$$$",
     telephone: "+57 318 353 4907",
     acceptsReservations: WHATSAPP_BRUNCH,
+    hasMenu: {
+      "@type": "Menu",
+      name: "Late Morning · All you can eat",
+      url: "https://sabinebistro.com/brunch#menu-brunch",
+      hasMenuSection: {
+        "@type": "MenuSection",
+        name: "Brunch",
+        hasMenuItem: [
+          { name: lang === "es" ? "Brunch por persona" : "Brunch per person", precio: PRECIOS_BRUNCH.adulto },
+          { name: lang === "es" ? "Brunch niños (hasta 10 años)" : "Kids brunch (up to 10 years old)", precio: PRECIOS_BRUNCH.nino },
+        ].map(({ name, precio }) => ({
+          "@type": "MenuItem",
+          name,
+          offers: { "@type": "Offer", price: precio, priceCurrency: "COP" },
+        })),
+      },
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "Carrera 11 #39-21, C.C. La Serrezuela, Pisos 2 y 3",
@@ -90,6 +108,7 @@ const Brunch = () => {
           onCtaClick={() => trackWhatsAppClick("brunch_hero_cta")}
         />
         <BrunchAbout />
+        <BrunchMenu />
         <BrunchGallery />
         <LocationSection />
         <BrunchCTA />
