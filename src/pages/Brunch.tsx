@@ -106,6 +106,7 @@ const Brunch = () => {
           ctaLabel={t("brunch.hero.cta")}
           ctaHref={WHATSAPP_BRUNCH}
           onCtaClick={() => trackWhatsAppClick("brunch_hero_cta")}
+          video={{ src: "/videos/brunch-hero.mp4", poster: "/videos/brunch-hero-poster.jpg", vertical: true }}
         />
         <BrunchAbout />
         <BrunchMenu />

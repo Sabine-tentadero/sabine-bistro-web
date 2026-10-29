@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Originales de video del cliente (pesados); la web usa la versión convertida en public/videos/*.mp4
+*.MOV
+*.mov
