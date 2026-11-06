@@ -1,35 +1,49 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Star, Quote } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+// Reseñas reales de la ficha de Google de Sabine (5 estrellas), copiadas el 6-nov-2026.
+// Calificación de la ficha ese día: 4,4 con 319 reseñas. Actualizar a mano si cambia mucho.
+const GOOGLE_RATING = { es: "4,4", en: "4.4" };
+const GOOGLE_COUNT = 319;
 
 const reviews = [
   {
-    name: "Andrés M.",
-    location: "Cartagena",
-    text: "¡Excelente servicio! Delicioso el Steak Frites, al igual que el T-Bone. El cóctel Oregon y el Mocktail Moscow Mule. Volvería mil veces, muy buen ambiente en el lugar.",
+    name: "Estefani D.",
+    text: {
+      es: "Fuimos para celebrar el cumpleaños de una amiga y nos encantó la experiencia. Antony el mesero nos dio una atención cálida y oportuna. Muy profesional. ¡Seguro que volveremos!",
+      en: "We went to celebrate a friend's birthday and loved the experience. Antony, the waiter, gave us warm and prompt service. Very professional. We'll definitely be back!",
+    },
     rating: 5,
-    date: "Sept 2025",
+    date: { es: "Nov 2026", en: "Nov 2026" },
   },
   {
-    name: "MPToro",
-    location: "Bogotá",
-    text: "Es un lugar excelente! La comida muy rica y la atención excelente! Súper recomendado como plan para parejas. Tiene una terraza donde se pueden tomar fotos increíbles.",
+    name: "Cristoffer P.",
+    text: {
+      es: "Amazing service, food and portions! Have come here twice now while visiting Cartagena! The vibe is also great bistro / lounge vibes.",
+      en: "Amazing service, food and portions! Have come here twice now while visiting Cartagena! The vibe is also great bistro / lounge vibes.",
+    },
     rating: 5,
-    date: "May 2025",
+    date: { es: "Sept 2026", en: "Sept 2026" },
   },
   {
-    name: "Pamela V.",
-    location: "Colombia",
-    text: "Es un gran lugar, los alimentos son deliciosos, la atención increíble, todos muy amables. Me parece que es congruente calidad-precio, lo recomiendo ampliamente.",
+    name: "Maribel C.",
+    text: {
+      es: "Me encantó el lugar, muy buena atención, especialmente la del mesero Jhan. Fuimos a celebrar nuestro aniversario y cumplió todas nuestras expectativas.",
+      en: "I loved the place, the service was excellent, especially from our waiter Jhan. We went to celebrate our anniversary and it met all our expectations.",
+    },
     rating: 5,
-    date: "Abr 2025",
+    date: { es: "Ago 2026", en: "Aug 2026" },
   },
   {
-    name: "Foreropa",
-    location: "Bogotá",
-    text: "Una comida totalmente espectacular, me comí una carne que ha sido de las mejores que me he comido en mi vida. El servicio estupendo. Excelente ambiente.",
+    name: "Elkin H.",
+    text: {
+      es: "Deliciosa comida, porciones generosas y una atención excelente. ¡Nuestro mesero Anthony estuvo muy atento a todos los detalles!",
+      en: "Delicious food, generous portions and excellent service. Our waiter Anthony was very attentive to every detail!",
+    },
     rating: 5,
-    date: "Oct 2025",
+    date: { es: "Oct 2026", en: "Oct 2026" },
   },
 ];
 
@@ -37,6 +51,7 @@ const ReviewsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [active, setActive] = useState(0);
+  const { t, lang } = useLanguage();
 
   return (
     <section id="reviews" className="section-padding bg-dark-gradient-reverse" ref={ref}>
@@ -47,7 +62,7 @@ const ReviewsSection = () => {
             animate={isInView ? { opacity: 1 } : {}}
             className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4"
           >
-            Opiniones
+            {t("rev.kicker")}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +70,7 @@ const ReviewsSection = () => {
             transition={{ delay: 0.2 }}
             className="font-display text-3xl md:text-5xl font-light"
           >
-            Lo que dicen nuestros <span className="italic text-gold-gradient">invitados</span>
+            {t("rev.title")}
           </motion.h2>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -71,13 +86,13 @@ const ReviewsSection = () => {
             transition={{ delay: 0.6 }}
             className="flex items-center justify-center gap-2 mt-8"
           >
-            <span className="font-display text-4xl text-primary">4.8</span>
+            <span className="font-display text-4xl text-primary">{GOOGLE_RATING[lang]}</span>
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={16} className="fill-primary text-primary" />
+                <Star key={i} size={16} className={i < 4 ? "fill-primary text-primary" : "text-primary"} />
               ))}
             </div>
-            <span className="font-body text-xs text-muted-foreground ml-2">209+ opiniones</span>
+            <span className="font-body text-xs text-muted-foreground ml-2">{GOOGLE_COUNT} {t("rev.count")}</span>
           </motion.div>
         </div>
 
@@ -91,12 +106,12 @@ const ReviewsSection = () => {
           <div className="bg-card/50 border border-border p-8 md:p-12 text-center max-w-3xl mx-auto">
             <Quote size={32} className="text-primary/30 mx-auto mb-6" />
             <p className="font-elegant text-lg md:text-xl text-foreground/80 leading-relaxed mb-8 min-h-[80px]">
-              "{reviews[active].text}"
+              "{reviews[active].text[lang]}"
             </p>
             <div className="gold-divider mb-6" />
             <p className="font-body text-sm tracking-[0.1em] text-foreground">{reviews[active].name}</p>
             <p className="font-body text-xs text-muted-foreground mt-1">
-              {reviews[active].location} · {reviews[active].date}
+              {t("rev.source")} · {reviews[active].date[lang]}
             </p>
             <div className="flex gap-1 justify-center mt-3">
               {[...Array(reviews[active].rating)].map((_, i) => (

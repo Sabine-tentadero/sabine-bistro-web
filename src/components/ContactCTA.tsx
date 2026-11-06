@@ -90,19 +90,11 @@ const ContactCTA = () => {
               </h4>
               <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
                 <a
-                  href="tel:+573218075884"
+                  href="tel:+573138780227"
                   onClick={() => trackPhoneClick("contact_events")}
                   className="font-elegant text-[15px] md:text-base text-foreground/55 md:text-foreground/40 hover:text-primary transition-colors duration-500"
                 >
                   {t("contact.phone1")}
-                </a>
-                <span className="hidden sm:block text-foreground/20">·</span>
-                <a
-                  href="tel:+573107204102"
-                  onClick={() => trackPhoneClick("contact_events")}
-                  className="font-elegant text-[15px] md:text-base text-foreground/55 md:text-foreground/40 hover:text-primary transition-colors duration-500"
-                >
-                  {t("contact.phone2")}
                 </a>
               </div>
               <a

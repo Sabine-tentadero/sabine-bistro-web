@@ -23,8 +23,7 @@ const ContactInfo = () => {
 
   const phones = [
     { number: "+57 318 353 4907", href: "tel:+573183534907" },
-    { number: "+57 321 807 5884", href: "tel:+573218075884" },
-    { number: "+57 310 720 4102", href: "tel:+573107204102" },
+    { number: "+57 313 878 0227", href: "tel:+573138780227" },
   ];
 
   return (

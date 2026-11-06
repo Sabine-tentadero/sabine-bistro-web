@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import contactImg from "@/assets/contact-cocktail.jpg";
 import { trackReservationClick } from "@/lib/gtm";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { usePrecomproUrl, refreshPrecomproHrefOnClick } from "@/lib/attribution";
 
 const Sparkle = () => (
@@ -14,6 +15,7 @@ const ReservationSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const precomproUrl = usePrecomproUrl();
+  const { t } = useLanguage();
 
   return (
     <section id="reservations" className="relative overflow-hidden" ref={ref}>
@@ -41,7 +43,7 @@ const ReservationSection = () => {
             transition={{ delay: 0.2 }}
             className="font-display text-3xl sm:text-4xl md:text-5xl italic font-light text-foreground/95 mb-5 md:mb-6 leading-tight"
           >
-            Reserva tu experiencia
+            {t("res.title")}
           </motion.h2>
 
           <motion.p
@@ -50,7 +52,7 @@ const ReservationSection = () => {
             transition={{ delay: 0.4 }}
             className="font-elegant text-[15px] sm:text-base md:text-lg italic text-foreground/55 md:text-foreground/35 mb-10 md:mb-12 max-w-xl mx-auto leading-relaxed"
           >
-            Cada visita a Sabine es una ocasión especial. Reserva tu mesa y déjate sorprender.
+            {t("res.subtitle")}
           </motion.p>
 
           <motion.a
@@ -66,7 +68,7 @@ const ReservationSection = () => {
             transition={{ delay: 0.6 }}
             className="inline-block font-body text-[10px] sm:text-[11px] tracking-[0.3em] sm:tracking-[0.35em] uppercase px-10 sm:px-14 py-4 sm:py-5 border border-primary/60 text-foreground/90 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-500"
           >
-            Reservar Mesa
+            {t("hero.cta")}
           </motion.a>
 
           <motion.div
@@ -76,10 +78,10 @@ const ReservationSection = () => {
             className="mt-12 md:mt-16 space-y-2"
           >
             <p className="font-elegant text-xs sm:text-sm text-foreground/40 md:text-foreground/25">
-              Para eventos privados y corporativos
+              {t("contact.events.label")}
             </p>
             <p className="font-elegant text-xs sm:text-sm text-foreground/55 md:text-foreground/35">
-              +57 321 807 5884 · +57 310 720 4102
+              <a href="tel:+573138780227" className="hover:text-primary transition-colors duration-500">+57 313 878 0227</a>
             </p>
           </motion.div>
         </div>

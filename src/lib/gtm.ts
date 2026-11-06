@@ -25,6 +25,7 @@ export type ReserveLocation =
   | "mobile_navbar_cta"
   | "section_cta"
   | "floating_cta"
+  | "occasions_cta"
   | "menu_cta";
 
 export type WhatsAppLocation = string;
