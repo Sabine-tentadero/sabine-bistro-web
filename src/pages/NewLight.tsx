@@ -32,7 +32,7 @@ const PAGE = {
     title: "NEW LIGHT · Fin de año en Cartagena 2026 | Sabine Bistro & Lounge, La Serrezuela",
     description:
       "Recibe el año nuevo en la Terraza del Ruedo de La Serrezuela: cena por tiempos, orquesta en vivo, DJ, show de mulatas y espumoso a medianoche. Desde $695.000 por persona. Reserva por WhatsApp.",
-    eyebrow: "31 · 12 · 26 · Terraza del Ruedo · Cartagena",
+    eyebrow: "31 · 12 · 26 · 7:30 p. m. · Terraza del Ruedo · Cartagena",
     h1Small: "Fin de año en Cartagena",
     tagline: "Una noche para celebrar un nuevo comienzo",
     orWrite: "o escríbenos al",
@@ -61,7 +61,7 @@ const PAGE = {
     ] as [string, string][],
     faqTitle: "Preguntas frecuentes",
     faq: [
-      ["¿Cuándo es NEW LIGHT?", "La noche del 31 de diciembre de 2026, para recibir el 2027."],
+      ["¿Cuándo es NEW LIGHT?", "El 31 de diciembre de 2026, de 7:30 p. m. a 2:00 a. m., para recibir el 2027."],
       ["¿Dónde es?", "En la Terraza del Ruedo de Sabine Bistro & Lounge, en el C.C. La Serrezuela, Centro Histórico de Cartagena."],
       ["¿Cuánto cuesta?", "$695.000 por persona hasta el 19 de noviembre. Desde el 20 de noviembre, $745.000 por persona."],
       ["¿Qué incluye?", "Cena gastronómica por tiempos, charcutería y quesos para la mesa, orquesta en vivo, DJ, show de mulatas, cotillones, globo o ritual de deseos y una copa de espumoso a medianoche."],
@@ -74,7 +74,7 @@ const PAGE = {
     title: "NEW LIGHT · New Year's Eve in Cartagena 2026 | Sabine Bistro & Lounge, La Serrezuela",
     description:
       "Ring in the new year at Terraza del Ruedo, La Serrezuela: multi-course dinner, live orchestra, DJ, mulatas dance show and sparkling wine at midnight. From COP 695,000 per person. Book on WhatsApp.",
-    eyebrow: "12 · 31 · 26 · Terraza del Ruedo · Cartagena",
+    eyebrow: "12 · 31 · 26 · 7:30 p.m. · Terraza del Ruedo · Cartagena",
     h1Small: "New Year's Eve in Cartagena",
     tagline: "A night to celebrate a new beginning",
     orWrite: "or message us at",
@@ -103,7 +103,7 @@ const PAGE = {
     ] as [string, string][],
     faqTitle: "Frequently asked questions",
     faq: [
-      ["When is NEW LIGHT?", "On the night of December 31, 2026, to welcome 2027."],
+      ["When is NEW LIGHT?", "On December 31, 2026, from 7:30 p.m. to 2:00 a.m., to welcome 2027."],
       ["Where is it?", "At Terraza del Ruedo, Sabine Bistro & Lounge, La Serrezuela mall, Cartagena Old Town."],
       ["How much is it?", "COP 695,000 per person until November 19. From November 20, COP 745,000 per person."],
       ["What's included?", "A multi-course gastronomic dinner, charcuterie and cheese for the table, live orchestra, DJ, mulatas dance show, party favors, a wish balloon ritual and a glass of sparkling wine at midnight."],
@@ -146,8 +146,8 @@ const NewLight = () => {
     description: p.description,
     url: canonical,
     inLanguage: lang,
-    startDate: "2026-12-31",
-    endDate: "2027-01-01",
+    startDate: "2026-12-31T19:30:00-05:00",
+    endDate: "2027-01-01T02:00:00-05:00",
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     image: ["1x1", "4x3", "16x9"].map((r) => `${SITE}${EV}/new-light-evento-${r}.jpg`).concat(`${SITE}${IMG_MAIN}.jpg`),
