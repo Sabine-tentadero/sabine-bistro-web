@@ -49,25 +49,30 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center w-full max-w-3xl mx-auto px-5 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
-          className={showcase ? "mb-3" : "mb-5 md:mb-6"}
-        >
-          <p className="font-elegant text-base sm:text-lg md:text-2xl italic text-foreground/70 tracking-[0.05em]">
-            {t("hero.tagline")}
-          </p>
-        </motion.div>
+        {/* Mientras NEW LIGHT ocupa el hero, "Bistro & Lounge" y el logo se ocultan (el logo ya está en la barra). */}
+        {!showcase && (
+          <>
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.4, ease: "easeOut" }}
+            className="mb-5 md:mb-6"
+          >
+            <p className="font-elegant text-base sm:text-lg md:text-2xl italic text-foreground/70 tracking-[0.05em]">
+              {t("hero.tagline")}
+            </p>
+          </motion.div>
 
-        <motion.img
-          src={logoGold}
-          alt="Sabine Bistró & Lounge"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className={showcase ? "w-28 sm:w-36 md:w-44 mx-auto mb-6 md:mb-7" : "w-44 sm:w-56 md:w-72 lg:w-80 mx-auto mb-6 md:mb-8"}
-        />
+          <motion.img
+            src={logoGold}
+            alt="Sabine Bistró & Lounge"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+            className="w-44 sm:w-56 md:w-72 lg:w-80 mx-auto mb-6 md:mb-8"
+          />
+          </>
+        )}
 
         {showcase && <NewLightShowcase phase={nlPhase} />}
 
