@@ -15,6 +15,8 @@ const SITE = "https://sabinebistro.com";
 const IMG_MAIN = "/new-light/new-light-sabine-31-12-26";
 const IMG_INCLUYE = "/new-light/new-light-sabine-que-incluye";
 const OG_IMAGE = `${SITE}/new-light/new-light-og.jpg`;
+const EV = "/new-light/eventos";
+const HERO_BG = `${EV}/evento-sabine-cena-banda-en-vivo`;
 
 const ADDRESS = {
   "@type": "PostalAddress",
@@ -47,6 +49,16 @@ const PAGE = {
     wherePlace: "Terraza del Ruedo · Sabine Bistro & Lounge",
     whereAddress: "C.C. La Serrezuela, Carrera 11 #39-21, Centro Histórico de Cartagena",
     directions: "Cómo llegar",
+    galleryTitle: "Eventos anteriores en Sabine",
+    galleryIntro: "Así se han vivido otras noches en Sabine y La Serrezuela.",
+    gallery: [
+      ["evento-sabine-cena-banda-en-vivo", "Cena con banda en vivo en Sabine, La Serrezuela"],
+      ["evento-sabine-fiesta-salon", "Fiesta en el salón de Sabine Bistro & Lounge"],
+      ["evento-sabine-celebracion", "Celebración con brindis en Sabine"],
+      ["evento-sabine-terraza", "Evento en la terraza de Sabine, La Serrezuela"],
+      ["sabine-bar-lounge", "Bar y lounge de Sabine"],
+      ["sabine-la-serrezuela-entrada", "Entrada de Sabine en La Serrezuela, Cartagena"],
+    ] as [string, string][],
     faqTitle: "Preguntas frecuentes",
     faq: [
       ["¿Cuándo es NEW LIGHT?", "La noche del 31 de diciembre de 2026, para recibir el 2027."],
@@ -79,6 +91,16 @@ const PAGE = {
     wherePlace: "Terraza del Ruedo · Sabine Bistro & Lounge",
     whereAddress: "La Serrezuela mall, Carrera 11 #39-21, Cartagena Old Town",
     directions: "Get directions",
+    galleryTitle: "Past events at Sabine",
+    galleryIntro: "A look at other nights at Sabine and La Serrezuela.",
+    gallery: [
+      ["evento-sabine-cena-banda-en-vivo", "Dinner with a live band at Sabine, La Serrezuela"],
+      ["evento-sabine-fiesta-salon", "Party in the Sabine Bistro & Lounge dining room"],
+      ["evento-sabine-celebracion", "Celebration and toast at Sabine"],
+      ["evento-sabine-terraza", "Event on the Sabine terrace, La Serrezuela"],
+      ["sabine-bar-lounge", "Sabine bar and lounge"],
+      ["sabine-la-serrezuela-entrada", "Sabine entrance at La Serrezuela, Cartagena"],
+    ] as [string, string][],
     faqTitle: "Frequently asked questions",
     faq: [
       ["When is NEW LIGHT?", "On the night of December 31, 2026, to welcome 2027."],
@@ -128,7 +150,7 @@ const NewLight = () => {
     endDate: "2027-01-01",
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    image: [`${SITE}${IMG_MAIN}.jpg`, OG_IMAGE],
+    image: ["1x1", "4x3", "16x9"].map((r) => `${SITE}${EV}/new-light-evento-${r}.jpg`).concat(`${SITE}${IMG_MAIN}.jpg`),
     location: {
       "@type": "Place",
       name: "Terraza del Ruedo · Sabine Bistro & Lounge, C.C. La Serrezuela",
@@ -167,8 +189,16 @@ const NewLight = () => {
         <Navbar ctaVariant="newlight" />
 
         {/* Portada */}
-        <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 px-5 sm:px-6">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 px-5 sm:px-6 overflow-hidden">
+          <div className="absolute inset-0" aria-hidden="true">
+            <picture>
+              <source srcSet={`${HERO_BG}.webp`} type="image/webp" />
+              <img src={`${HERO_BG}.jpg`} alt="" className="w-full h-full object-cover" />
+            </picture>
+            <div className="absolute inset-0 bg-background/60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/60" />
+          </div>
+          <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -281,6 +311,21 @@ const NewLight = () => {
             <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackNewLightClick("page_precio", phase)} className={ctaClass}>
               {ctaLabel}
             </a>
+          </div>
+        </section>
+
+        {/* Eventos anteriores */}
+        <section className="py-16 md:py-24 px-5 sm:px-6 border-t border-foreground/10">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-display text-3xl sm:text-4xl font-light text-foreground mb-3 text-center">{p.galleryTitle}</h2>
+            <p className="font-elegant italic text-base text-foreground/65 mb-10 text-center">{p.galleryIntro}</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+              {p.gallery.map(([file, alt]) => (
+                <figure key={file} className="overflow-hidden">
+                  <Picture base={`${EV}/${file}`} alt={alt} className="w-full h-full object-cover aspect-[4/5] hover:scale-[1.03] transition-transform duration-700" />
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 
