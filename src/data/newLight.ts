@@ -9,7 +9,7 @@ export const NEW_LIGHT = {
   showUntil: Date.parse("2027-01-01T05:00:00Z"),
   // Cambiar a true si se agota: el botón pasa a "lista de espera"
   soldOut: false,
-  whatsappNumber: "573183534907",
+  whatsappNumber: "573138780227",
 };
 
 type Copy = {
