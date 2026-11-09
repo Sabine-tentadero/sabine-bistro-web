@@ -4,9 +4,13 @@ import logoGold from "@/assets/sabine-script.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackReservationClick } from "@/lib/gtm";
 import { usePrecomproUrl, refreshPrecomproHrefOnClick } from "@/lib/attribution";
+import NewLightShowcase, { useNewLightPhase } from "@/components/NewLightShowcase";
+import { NEW_LIGHT_COPY } from "@/data/newLight";
 
 const HeroSection = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const nlPhase = useNewLightPhase();
+  const showcase = nlPhase !== "over";
   const videoRef = useRef<HTMLVideoElement>(null);
   const precomproUrl = usePrecomproUrl();
 
@@ -21,7 +25,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section id="hero" className={`relative ${showcase ? "min-h-[100svh] py-24 md:py-28" : "h-[100svh] min-h-[600px]"} flex items-center justify-center overflow-hidden`}>
       {/* Background video with overlay */}
       <div className="absolute inset-0">
         <video
@@ -49,7 +53,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
-          className="mb-5 md:mb-6"
+          className={showcase ? "mb-3" : "mb-5 md:mb-6"}
         >
           <p className="font-elegant text-base sm:text-lg md:text-2xl italic text-foreground/70 tracking-[0.05em]">
             {t("hero.tagline")}
@@ -62,14 +66,16 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className="w-44 sm:w-56 md:w-72 lg:w-80 mx-auto mb-6 md:mb-8"
+          className={showcase ? "w-28 sm:w-36 md:w-44 mx-auto mb-6 md:mb-7" : "w-44 sm:w-56 md:w-72 lg:w-80 mx-auto mb-6 md:mb-8"}
         />
+
+        {showcase && <NewLightShowcase phase={nlPhase} />}
 
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="font-display text-xl sm:text-2xl md:text-3xl italic font-light text-foreground/90 leading-snug mb-4 md:mb-5 max-w-xl mx-auto"
+          className={showcase ? "font-display text-base sm:text-lg md:text-xl italic font-light text-foreground/85 leading-snug mb-4 max-w-xl mx-auto" : "font-display text-xl sm:text-2xl md:text-3xl italic font-light text-foreground/90 leading-snug mb-4 md:mb-5 max-w-xl mx-auto"}
         >
           {t("hero.h1")}
         </motion.h1>
@@ -78,7 +84,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="font-elegant text-xs sm:text-sm md:text-base text-foreground/70 tracking-[0.12em] mb-10 md:mb-12 max-w-xs sm:max-w-md mx-auto italic leading-relaxed"
+          className={showcase ? "sr-only" : "font-elegant text-xs sm:text-sm md:text-base text-foreground/70 tracking-[0.12em] mb-10 md:mb-12 max-w-xs sm:max-w-md mx-auto italic leading-relaxed"}
         >
           {t("hero.subtitle")}
         </motion.p>
@@ -96,7 +102,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="inline-block font-body text-[10px] tracking-[0.35em] md:tracking-[0.4em] uppercase px-8 md:px-10 py-3.5 md:py-4 border border-primary/70 text-foreground hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-500"
         >
-          {t("hero.cta")}
+          {showcase ? NEW_LIGHT_COPY[lang].restaurantCta : t("hero.cta")}
         </motion.a>
       </div>
 
@@ -105,7 +111,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className={`absolute bottom-10 left-1/2 -translate-x-1/2 ${showcase ? "hidden" : ""}`}
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}
