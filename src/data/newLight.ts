@@ -9,8 +9,8 @@ export const NEW_LIGHT = {
   showUntil: Date.parse("2027-01-01T05:00:00Z"),
   // Cambiar a true si se agota: el botón pasa a "lista de espera"
   soldOut: false,
-  whatsappNumber: "573138780227",
-  whatsappDisplay: "+57 313 878 0227",
+  whatsappNumber: "573183534907",
+  whatsappDisplay: "+57 318 353 4907",
   rutas: { es: "/new-light", en: "/en/new-light" } as const,
 };
 

@@ -34,7 +34,7 @@ export const useNewLightPhase = () => {
 };
 
 // Los enlaces wa.me no transmiten UTMs: el origen viaja como código en el mensaje
-// prellenado (estándar RankNRoll) y quien atiende el 313 lo anota en cada chat.
+// prellenado (estándar RankNRoll) y quien atiende el WhatsApp del evento lo anota en cada chat.
 // Formato: NL-<botón>-<origen>. Ej.: NL-INICIO-GADS, NL-EVENTO-META, NL-MENU-WEB.
 const NL_BOTON: Record<string, string> = {
   hero: "INICIO",
@@ -68,7 +68,9 @@ export const newLightWhatsAppHref = (lang: "es" | "en", location = "hero") => {
   const c = NEW_LIGHT_COPY[lang];
   const text = NEW_LIGHT.soldOut ? c.whatsappTextSoldOut : c.whatsappText;
   const code = lang === "es" ? `(código ${newLightCode(location)})` : `(code ${newLightCode(location)})`;
-  return `https://wa.me/${NEW_LIGHT.whatsappNumber}?text=${encodeURIComponent(`${text} ${code}`)}`;
+  // api.whatsapp.com y no wa.me: la etiqueta 82 de GTM reescribe todo enlace "wa.me/573183534907"
+  // con su propio mensaje y borraría el texto y el código de NEW LIGHT.
+  return `https://api.whatsapp.com/send?phone=${NEW_LIGHT.whatsappNumber}&text=${encodeURIComponent(`${text} ${code}`)}`;
 };
 
 /**
