@@ -15,6 +15,7 @@ export const NEW_LIGHT = {
 type Copy = {
   eyebrow: string;
   subtitle: string;
+  invite: string;
   highlights: string;
   includesTitle: string;
   includes: string[];
@@ -35,7 +36,9 @@ export const NEW_LIGHT_COPY: Record<"es" | "en", Copy> = {
   es: {
     eyebrow: "31 · 12 · 26 · Terraza del Ruedo",
     subtitle: "New Year's Eve by Sabine",
-    highlights: "Cena por tiempos · Orquesta en vivo · DJ · Espumoso a medianoche",
+    invite: "Recibe con nosotros el año nuevo",
+    highlights:
+      "Despide el 2026 en la Terraza del Ruedo con una cena por tiempos, charcutería y quesos para la mesa, orquesta en vivo y DJ, y una copa de espumoso para brindar a la medianoche.",
     includesTitle: "Incluye",
     includes: [
       "Cena gastronómica por tiempos",
@@ -53,7 +56,7 @@ export const NEW_LIGHT_COPY: Record<"es" | "en", Copy> = {
     details: "Ver qué incluye",
     hideDetails: "Ocultar",
     whatsappText:
-      "Hola, vengo de sabinebistro.com y quiero reservar mesa para NEW LIGHT, el 31 de diciembre.",
+      "Hola, vengo de sabinebistro.com y quiero saber más sobre NEW LIGHT, el evento de fin de año de Sabine.",
     whatsappTextSoldOut:
       "Hola, vengo de sabinebistro.com y quiero entrar a la lista de espera de NEW LIGHT, el 31 de diciembre.",
     restaurantCta: "Reservar mesa en el restaurante",
@@ -61,7 +64,9 @@ export const NEW_LIGHT_COPY: Record<"es" | "en", Copy> = {
   en: {
     eyebrow: "12 · 31 · 26 · Terraza del Ruedo",
     subtitle: "New Year's Eve by Sabine",
-    highlights: "Multi-course dinner · Live orchestra · DJ · Sparkling wine at midnight",
+    invite: "Ring in the new year with us",
+    highlights:
+      "Say goodbye to 2026 at Terraza del Ruedo with a multi-course dinner, charcuterie and cheese for the table, a live orchestra and DJ, and a glass of sparkling wine to toast at midnight.",
     includesTitle: "Includes",
     includes: [
       "Multi-course gastronomic dinner",
@@ -79,7 +84,7 @@ export const NEW_LIGHT_COPY: Record<"es" | "en", Copy> = {
     details: "See what's included",
     hideDetails: "Hide",
     whatsappText:
-      "Hi, I'm coming from sabinebistro.com and I'd like to reserve a table for NEW LIGHT on December 31.",
+      "Hi, I'm coming from sabinebistro.com and I'd like to know more about NEW LIGHT, Sabine's New Year's Eve event.",
     whatsappTextSoldOut:
       "Hi, I'm coming from sabinebistro.com and I'd like to join the NEW LIGHT waitlist for December 31.",
     restaurantCta: "Book a table at the restaurant",

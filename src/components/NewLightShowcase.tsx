@@ -66,6 +66,10 @@ const NewLightShowcase = ({ phase }: { phase: "launch" | "regular" }) => {
         {c.eyebrow}
       </p>
 
+      <p className="font-elegant italic text-lg sm:text-xl md:text-2xl text-foreground/90 mb-3">
+        {c.invite}
+      </p>
+
       <p className="font-display text-4xl sm:text-5xl md:text-6xl font-light tracking-[0.18em] text-foreground leading-none mb-2">
         NEW LIGHT
       </p>
@@ -73,7 +77,7 @@ const NewLightShowcase = ({ phase }: { phase: "launch" | "regular" }) => {
         {c.subtitle}
       </p>
 
-      <p className="font-body text-[11px] sm:text-xs tracking-[0.08em] text-foreground/70 leading-relaxed mb-5">
+      <p className="font-elegant text-sm sm:text-base text-foreground/80 leading-relaxed mb-5 max-w-sm mx-auto">
         {c.highlights}
       </p>
 
