@@ -227,7 +227,7 @@ const LanguageContext = createContext<Ctx | undefined>(undefined);
 
 /** Idioma fijado por la URL (/en/… = inglés, /menu = español) o null si la página sigue la preferencia guardada. */
 export const idiomaDeRuta = (path: string): Lang | null =>
-  path === "/en" || path.startsWith("/en/") ? "en" : path === "/menu" ? "es" : null;
+  path === "/en" || path.startsWith("/en/") ? "en" : path === "/menu" || path === "/new-light" ? "es" : null;
 
 export const LanguageProvider = ({ children, initialLang }: { children: ReactNode; initialLang?: Lang }) => {
   // La primera pintura usa el idioma de la URL (español por defecto), igual que el HTML prerenderizado,

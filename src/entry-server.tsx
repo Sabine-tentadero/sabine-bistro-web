@@ -6,7 +6,7 @@ import { HelmetProvider, type HelmetServerState } from "react-helmet-async";
 import { AppRoutes, Providers } from "./App";
 import { idiomaDeRuta } from "./contexts/LanguageContext";
 
-export const rutasPrerender = ["/", "/menu", "/en/menu", "/brunch", "/contacto", "/politica-de-datos"];
+export const rutasPrerender = ["/", "/menu", "/en/menu", "/brunch", "/contacto", "/politica-de-datos", "/new-light", "/en/new-light"];
 
 export function render(url: string) {
   const contexto: { helmet?: HelmetServerState } = {};

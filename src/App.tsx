@@ -9,6 +9,7 @@ import Brunch from "./pages/Brunch";
 import Menu from "./pages/Menu";
 import Contacto from "./pages/Contacto";
 import PoliticaDatos from "./pages/PoliticaDatos";
+import NewLight from "./pages/NewLight";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { captureAttribution } from "./lib/attribution";
@@ -58,6 +59,8 @@ export const AppRoutes = () => (
             <Route path="/brunch" element={<Brunch />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/politica-de-datos" element={<PoliticaDatos />} />
+            <Route path="/new-light" element={<NewLight />} />
+            <Route path="/en/new-light" element={<NewLight />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
     </Routes>

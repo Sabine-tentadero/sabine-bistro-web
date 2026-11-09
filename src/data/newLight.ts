@@ -1,5 +1,5 @@
 // NEW LIGHT · New Year's Eve by Sabine (31.12.26)
-// Datos tomados solo de las piezas del cliente (creativos/san_silvestre_2026/evento.json).
+// Datos tomados solo de las piezas del cliente (Drive: SAN SILVESTRE / Post e Historias).
 // Fechas en hora de Bogotá (UTC-5) expresadas en UTC.
 
 export const NEW_LIGHT = {
@@ -10,6 +10,8 @@ export const NEW_LIGHT = {
   // Cambiar a true si se agota: el botón pasa a "lista de espera"
   soldOut: false,
   whatsappNumber: "573138780227",
+  whatsappDisplay: "+57 313 878 0227",
+  rutas: { es: "/new-light", en: "/en/new-light" } as const,
 };
 
 type Copy = {
@@ -38,12 +40,13 @@ export const NEW_LIGHT_COPY: Record<"es" | "en", Copy> = {
     subtitle: "New Year's Eve by Sabine",
     invite: "Recibe con nosotros el año nuevo",
     highlights:
-      "Despide el 2026 en la Terraza del Ruedo con una cena por tiempos, charcutería y quesos para la mesa, orquesta en vivo y DJ, y una copa de espumoso para brindar a la medianoche.",
+      "Despide el 2026 en la Terraza del Ruedo con una cena por tiempos, charcutería y quesos para la mesa, orquesta en vivo, DJ y show de mulatas, y una copa de espumoso para brindar a la medianoche.",
     includesTitle: "Incluye",
     includes: [
       "Cena gastronómica por tiempos",
       "Charcutería y quesos para la mesa",
       "Orquesta en vivo · DJ",
+      "Show de mulatas",
       "Cotillones · Globo / ritual de deseos",
       "Copa de espumoso a medianoche",
     ],
@@ -53,7 +56,7 @@ export const NEW_LIGHT_COPY: Record<"es" | "en", Copy> = {
     regularCondition: "Aforo limitado",
     cta: "Reservar mi mesa",
     ctaSoldOut: "Lista de espera",
-    details: "Ver qué incluye",
+    details: "Ver el evento",
     hideDetails: "Ocultar",
     whatsappText:
       "Hola, vengo de sabinebistro.com y quiero saber más sobre NEW LIGHT, el evento de fin de año de Sabine.",
@@ -66,12 +69,13 @@ export const NEW_LIGHT_COPY: Record<"es" | "en", Copy> = {
     subtitle: "New Year's Eve by Sabine",
     invite: "Ring in the new year with us",
     highlights:
-      "Say goodbye to 2026 at Terraza del Ruedo with a multi-course dinner, charcuterie and cheese for the table, a live orchestra and DJ, and a glass of sparkling wine to toast at midnight.",
+      "Say goodbye to 2026 at Terraza del Ruedo with a multi-course dinner, charcuterie and cheese for the table, a live orchestra, DJ and a mulatas dance show, and a glass of sparkling wine to toast at midnight.",
     includesTitle: "Includes",
     includes: [
       "Multi-course gastronomic dinner",
       "Charcuterie and cheese for the table",
       "Live orchestra · DJ",
+      "Mulatas dance show",
       "Party favors · Wish balloon ritual",
       "Glass of sparkling wine at midnight",
     ],
@@ -81,7 +85,7 @@ export const NEW_LIGHT_COPY: Record<"es" | "en", Copy> = {
     regularCondition: "Limited capacity",
     cta: "Reserve my table",
     ctaSoldOut: "Join the waitlist",
-    details: "See what's included",
+    details: "See the event",
     hideDetails: "Hide",
     whatsappText:
       "Hi, I'm coming from sabinebistro.com and I'd like to know more about NEW LIGHT, Sabine's New Year's Eve event.",

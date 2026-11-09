@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { RUTA_MENU } from "@/lib/carta";
+import { NEW_LIGHT } from "@/data/newLight";
 
 interface Props {
   className?: string;
@@ -18,6 +19,8 @@ const LanguageSwitcher = ({ className = "" }: Props) => {
     setLang(nuevo);
     // El menú tiene una URL por idioma (/menu · /en/menu): el selector lleva a la otra.
     if (pathname === RUTA_MENU.es || pathname === RUTA_MENU.en) navigate(RUTA_MENU[nuevo]);
+    // Igual con la página de NEW LIGHT (/new-light · /en/new-light).
+    if (pathname === NEW_LIGHT.rutas.es || pathname === NEW_LIGHT.rutas.en) navigate(NEW_LIGHT.rutas[nuevo]);
   };
 
   return (

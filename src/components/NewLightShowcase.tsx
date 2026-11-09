@@ -1,5 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { pushEvent, trackWhatsAppClick } from "@/lib/gtm";
 import {
@@ -10,7 +11,6 @@ import {
   newLightPrice,
 } from "@/data/newLight";
 
-/** Vitrina de NEW LIGHT dentro del hero. Se oculta sola después del 31-dic. */
 type Phase = "launch" | "regular" | "over";
 
 // En la hidratación se usa la fase que quedó en el HTML prerenderizado (evita el error de React);
@@ -32,20 +32,23 @@ export const useNewLightPhase = () => {
   return phase;
 };
 
+/** Enlace de WhatsApp del evento, con el texto en el idioma de la página. */
+export const newLightWhatsAppHref = (lang: "es" | "en") => {
+  const c = NEW_LIGHT_COPY[lang];
+  const text = NEW_LIGHT.soldOut ? c.whatsappTextSoldOut : c.whatsappText;
+  return `https://wa.me/${NEW_LIGHT.whatsappNumber}?text=${encodeURIComponent(text)}`;
+};
+
+/** Registra el clic de WhatsApp del evento (GTM) con el lugar del botón. */
+export const trackNewLightClick = (location: string, phase: Phase) => {
+  trackWhatsAppClick(`newlight_${location}`);
+  pushEvent("newlight_cta_click", { cta_location: location, phase, sold_out: NEW_LIGHT.soldOut });
+};
+
+/** Vitrina de NEW LIGHT dentro del hero del inicio. Se oculta sola después del 31-dic. */
 const NewLightShowcase = ({ phase }: { phase: "launch" | "regular" }) => {
   const { lang } = useLanguage();
   const c = NEW_LIGHT_COPY[lang];
-  const [open, setOpen] = useState(false);
-
-  const soldOut = NEW_LIGHT.soldOut;
-  const text = soldOut ? c.whatsappTextSoldOut : c.whatsappText;
-  const href =
-    `https://wa.me/${NEW_LIGHT.whatsappNumber}?text=${encodeURIComponent(text)}`;
-
-  const onCta = () => {
-    trackWhatsAppClick("hero_newlight");
-    pushEvent("newlight_cta_click", { cta_location: "hero", phase, sold_out: soldOut });
-  };
 
   return (
     <motion.div
@@ -98,48 +101,22 @@ const NewLightShowcase = ({ phase }: { phase: "launch" | "regular" }) => {
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
         <a
-          href={href}
+          href={newLightWhatsAppHref(lang)}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={onCta}
+          onClick={() => trackNewLightClick("hero", phase)}
           className="inline-block w-full sm:w-auto font-body text-[10px] tracking-[0.35em] uppercase px-8 py-3.5 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-300"
         >
-          {soldOut ? c.ctaSoldOut : c.cta}
+          {NEW_LIGHT.soldOut ? c.ctaSoldOut : c.cta}
         </a>
-        <button
-          type="button"
-          onClick={() => {
-            setOpen((v) => !v);
-            if (!open) pushEvent("newlight_details_open", { cta_location: "hero" });
-          }}
-          aria-expanded={open}
+        <Link
+          to={NEW_LIGHT.rutas[lang]}
+          onClick={() => pushEvent("newlight_details_open", { cta_location: "hero" })}
           className="font-elegant italic text-sm text-foreground/70 hover:text-primary underline underline-offset-4 decoration-primary/40 transition-colors"
         >
-          {open ? c.hideDetails : c.details}
-        </button>
+          {c.details}
+        </Link>
       </div>
-
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.ul
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35 }}
-            className="overflow-hidden text-left mx-auto max-w-xs mt-5 space-y-1.5"
-          >
-            <li className="font-body text-[10px] tracking-[0.3em] uppercase text-primary mb-2 text-center">
-              {c.includesTitle}
-            </li>
-            {c.includes.map((item) => (
-              <li key={item} className="font-elegant text-sm text-foreground/80 flex gap-2">
-                <span className="text-primary">·</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 };

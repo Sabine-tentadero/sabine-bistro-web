@@ -7,8 +7,10 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackReservationClick, trackWhatsAppClick, type WhatsAppLocation } from "@/lib/gtm";
 import { usePrecomproUrl, refreshPrecomproHrefOnClick } from "@/lib/attribution";
+import { NEW_LIGHT } from "@/data/newLight";
+import { newLightWhatsAppHref, trackNewLightClick, useNewLightPhase } from "./NewLightShowcase";
 
-type CtaVariant = "precompro" | "brunch" | "contacto";
+type CtaVariant = "precompro" | "brunch" | "contacto" | "newlight";
 
 interface NavbarProps {
   ctaVariant?: CtaVariant;
@@ -26,6 +28,13 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
   const { t, lang } = useLanguage();
   const location = useLocation();
   const precomproUrl = usePrecomproUrl();
+  const nlPhase = useNewLightPhase();
+  const showNewLight = nlPhase !== "over";
+  const nlRuta = NEW_LIGHT.rutas[lang];
+  const onNewLightPage = location.pathname === NEW_LIGHT.rutas.es || location.pathname === NEW_LIGHT.rutas.en;
+  const nlButtonClass = `whitespace-nowrap font-body tracking-[0.25em] uppercase bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-300 ${
+    onNewLightPage ? "ring-1 ring-primary ring-offset-2 ring-offset-background" : ""
+  }`;
 
   const navLinks = [
     { label: t("nav.home"), href: "/" },
@@ -47,6 +56,11 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
       label: t("nav.reserve_brunch"),
       href: WHATSAPP_BRUNCH,
       onClick: (_e: React.MouseEvent<HTMLAnchorElement>) => trackWhatsAppClick("brunch_hero_cta"),
+    },
+    newlight: {
+      label: t("nav.reserve_whatsapp"),
+      href: newLightWhatsAppHref(lang),
+      onClick: (_e: React.MouseEvent<HTMLAnchorElement>) => trackNewLightClick("navbar", nlPhase),
     },
     contacto: {
       label: t("nav.reserve_whatsapp"),
@@ -93,6 +107,11 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
               </Link>
             );
           })}
+          {showNewLight && (
+            <Link to={nlRuta} className={`${nlButtonClass} text-[10px] px-5 py-2.5`}>
+              New Light · 31.12
+            </Link>
+          )}
           <a
             href={cta.href}
             target="_blank"
@@ -106,7 +125,12 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
         </div>
 
         {/* Mobile */}
-        <div className="flex items-center gap-4 lg:hidden">
+        <div className="flex items-center gap-3 lg:hidden">
+          {showNewLight && (
+            <Link to={nlRuta} className={`${nlButtonClass} whitespace-nowrap !tracking-[0.15em] text-[9px] px-3 py-2`}>
+              New Light
+            </Link>
+          )}
           <LanguageSwitcher />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
