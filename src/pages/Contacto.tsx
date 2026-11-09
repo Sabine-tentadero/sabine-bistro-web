@@ -38,7 +38,7 @@ const Contacto = () => {
     description: seo.description,
     servesCuisine: ["American", "French", "Bistro"],
     priceRange: "$$$",
-    telephone: ["+57 318 353 4907", "+57 313 878 0227"],
+    telephone: "+57 318 353 4907",
     acceptsReservations: WHATSAPP_CONTACTO,
     address: {
       "@type": "PostalAddress",

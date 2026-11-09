@@ -21,10 +21,8 @@ const ContactInfo = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { t, lang } = useLanguage();
 
-  const phones = [
-    { number: "+57 318 353 4907", href: "tel:+573183534907" },
-    { number: "+57 313 878 0227", href: "tel:+573138780227" },
-  ];
+  // Reservas: solo el 318. El 313 es la persona de eventos corporativos y va en la tarjeta de eventos.
+  const phones = [{ number: "+57 318 353 4907", href: "tel:+573183534907" }];
 
   return (
     <section className="bg-background overflow-hidden" ref={ref}>
@@ -131,6 +129,13 @@ const ContactInfo = () => {
                   ? "Eventos privados, corporativos y celebraciones especiales"
                   : "Private events, corporate events and special celebrations"}
               </p>
+              <a
+                href="tel:+573138780227"
+                onClick={() => trackPhoneClick("contact_info_events")}
+                className="block font-elegant text-sm md:text-base text-foreground/55 hover:text-primary transition-colors duration-500 mb-5"
+              >
+                +57 313 878 0227
+              </a>
               <a
                 href={WHATSAPP_EVENTS}
                 target="_blank"
