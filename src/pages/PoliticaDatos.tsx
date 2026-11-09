@@ -383,6 +383,11 @@ const PoliticaDatos = () => {
           <Link to="/" className="text-sm mt-2 inline-block hover:opacity-80 transition-opacity underline">
             Volver al inicio
           </Link>
+          <p className="text-xs opacity-60 mt-4">
+            <a href="https://ranknroll.co/" target="_blank" rel="noopener" className="hover:opacity-80 transition-opacity">
+              Desarrollado por RankNRoll marketing para restaurantes
+            </a>
+          </p>
         </div>
       </footer>
     </div>

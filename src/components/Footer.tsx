@@ -55,6 +55,14 @@ const Footer = ({ hideFloatingButtons = false }: FooterProps) => {
           >
             Política de tratamiento de datos
           </Link>
+          <a
+            href="https://ranknroll.co/"
+            target="_blank"
+            rel="noopener"
+            className="font-body text-[9px] tracking-[0.2em] uppercase text-foreground/15 hover:text-foreground/40 transition-colors duration-500 mt-3"
+          >
+            Desarrollado por RankNRoll marketing para restaurantes
+          </a>
         </div>
       </div>
 
