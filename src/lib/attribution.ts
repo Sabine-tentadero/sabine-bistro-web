@@ -159,3 +159,8 @@ export function refreshPrecomproHrefOnClick(
   }
   e.currentTarget.href = next.toString();
 }
+
+/** Parámetros de atribución guardados (última visita con origen), o {} si no hay. */
+export function getStoredAttributionParams(): Partial<Record<string, string>> {
+  return readStored()?.params ?? {};
+}

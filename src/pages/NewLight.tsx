@@ -129,7 +129,7 @@ const NewLight = () => {
   const c = NEW_LIGHT_COPY[lang];
   const phaseRaw = useNewLightPhase();
   const phase = phaseRaw === "over" ? "regular" : phaseRaw;
-  const wa = newLightWhatsAppHref(lang);
+  const wa = (loc: string) => newLightWhatsAppHref(lang, loc);
   const ctaLabel = NEW_LIGHT.soldOut ? c.ctaSoldOut : c.cta;
   const canonical = SITE + NEW_LIGHT.rutas[lang];
 
@@ -234,12 +234,12 @@ const NewLight = () => {
                 {phase === "launch" && <p className="font-elegant italic text-sm text-foreground/50 mt-1">{c.launchNext}</p>}
               </div>
 
-              <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackNewLightClick("page_hero", phase)} className={ctaClass}>
+              <a href={wa("page_hero")} target="_blank" rel="noopener noreferrer" onClick={(e) => trackNewLightClick("page_hero", phase, e, lang)} className={ctaClass}>
                 {ctaLabel}
               </a>
               <p className="font-elegant italic text-sm text-foreground/55 mt-4">
                 {p.orWrite}{" "}
-                <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackNewLightClick("page_hero_numero", phase)} className="text-primary hover:underline">
+                <a href={wa("page_hero_numero")} target="_blank" rel="noopener noreferrer" onClick={(e) => trackNewLightClick("page_hero_numero", phase, e, lang)} className="text-primary hover:underline">
                   {NEW_LIGHT.whatsappDisplay}
                 </a>
               </p>
@@ -308,7 +308,7 @@ const NewLight = () => {
                 </div>
               ))}
             </div>
-            <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackNewLightClick("page_precio", phase)} className={ctaClass}>
+            <a href={wa("page_precio")} target="_blank" rel="noopener noreferrer" onClick={(e) => trackNewLightClick("page_precio", phase, e, lang)} className={ctaClass}>
               {ctaLabel}
             </a>
           </div>
@@ -360,7 +360,7 @@ const NewLight = () => {
         <section className="py-20 md:py-28 px-5 sm:px-6 border-t border-foreground/10 text-center">
           <p className="font-body text-[10px] tracking-[0.3em] uppercase text-primary mb-4">NEW LIGHT · 31.12.26</p>
           <h2 className="font-display text-3xl sm:text-5xl font-light text-foreground mb-8">{p.finalTitle}</h2>
-          <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackNewLightClick("page_cierre", phase)} className={ctaClass}>
+          <a href={wa("page_cierre")} target="_blank" rel="noopener noreferrer" onClick={(e) => trackNewLightClick("page_cierre", phase, e, lang)} className={ctaClass}>
             {ctaLabel}
           </a>
           <div className="mt-8">

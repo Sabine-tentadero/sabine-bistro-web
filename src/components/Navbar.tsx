@@ -59,8 +59,8 @@ const Navbar = ({ ctaVariant = "precompro" }: NavbarProps) => {
     },
     newlight: {
       label: t("nav.reserve_whatsapp"),
-      href: newLightWhatsAppHref(lang),
-      onClick: (_e: React.MouseEvent<HTMLAnchorElement>) => trackNewLightClick("navbar", nlPhase),
+      href: newLightWhatsAppHref(lang, "navbar"),
+      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => trackNewLightClick("navbar", nlPhase, e, lang),
     },
     contacto: {
       label: t("nav.reserve_whatsapp"),

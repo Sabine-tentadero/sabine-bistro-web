@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { pushEvent, trackWhatsAppClick } from "@/lib/gtm";
+import { getStoredAttributionParams } from "@/lib/attribution";
 import {
   NEW_LIGHT,
   NEW_LIGHT_COPY,
@@ -32,17 +33,64 @@ export const useNewLightPhase = () => {
   return phase;
 };
 
-/** Enlace de WhatsApp del evento, con el texto en el idioma de la página. */
-export const newLightWhatsAppHref = (lang: "es" | "en") => {
-  const c = NEW_LIGHT_COPY[lang];
-  const text = NEW_LIGHT.soldOut ? c.whatsappTextSoldOut : c.whatsappText;
-  return `https://wa.me/${NEW_LIGHT.whatsappNumber}?text=${encodeURIComponent(text)}`;
+// Los enlaces wa.me no transmiten UTMs: el origen viaja como código en el mensaje
+// prellenado (estándar RankNRoll) y quien atiende el 313 lo anota en cada chat.
+// Formato: NL-<botón>-<origen>. Ej.: NL-INICIO-GADS, NL-EVENTO-META, NL-MENU-WEB.
+const NL_BOTON: Record<string, string> = {
+  hero: "INICIO",
+  navbar: "MENU",
+  page_hero: "EVENTO",
+  page_hero_numero: "EVENTO",
+  page_precio: "PRECIO",
+  page_cierre: "CIERRE",
 };
 
-/** Registra el clic de WhatsApp del evento (GTM) con el lugar del botón. */
-export const trackNewLightClick = (location: string, phase: Phase) => {
+/** Origen de la visita según lo guardado por captureAttribution (90 días). */
+export const newLightOrigin = (): string => {
+  const a = getStoredAttributionParams();
+  if (a.gclid || a.gbraid || a.wbraid) return "GADS";
+  if (a.fbclid) return "META";
+  const src = (a.utm_source || "").toLowerCase();
+  if (!src) return "WEB";
+  if (src.includes("google_business") || src === "gbp") return "GBP";
+  if (src.includes("google")) return "GADS";
+  if (src.includes("meta") || src.includes("facebook") || src === "fb") return "META";
+  if (src.startsWith("ig") || src.includes("instagram")) return "IG";
+  if (src.includes("mail")) return "EMAIL";
+  return src.replace(/[^a-z0-9]/g, "").slice(0, 6).toUpperCase() || "WEB";
+};
+
+export const newLightCode = (location: string) =>
+  `NL-${NL_BOTON[location] ?? location.toUpperCase()}-${newLightOrigin()}`;
+
+/** Enlace de WhatsApp del evento, con el texto en el idioma de la página y el código de origen. */
+export const newLightWhatsAppHref = (lang: "es" | "en", location = "hero") => {
+  const c = NEW_LIGHT_COPY[lang];
+  const text = NEW_LIGHT.soldOut ? c.whatsappTextSoldOut : c.whatsappText;
+  const code = lang === "es" ? `(código ${newLightCode(location)})` : `(code ${newLightCode(location)})`;
+  return `https://wa.me/${NEW_LIGHT.whatsappNumber}?text=${encodeURIComponent(`${text} ${code}`)}`;
+};
+
+/**
+ * Clic en un botón de WhatsApp del evento: recalcula el enlace con el origen real
+ * del visitante (en el HTML prerenderizado sale como WEB) y lo registra en GTM.
+ */
+export const trackNewLightClick = (
+  location: string,
+  phase: Phase,
+  e?: { currentTarget: HTMLAnchorElement },
+  lang?: "es" | "en",
+) => {
+  if (e && lang) e.currentTarget.href = newLightWhatsAppHref(lang, location);
+  const code = newLightCode(location);
   trackWhatsAppClick(`newlight_${location}`);
-  pushEvent("newlight_cta_click", { cta_location: location, phase, sold_out: NEW_LIGHT.soldOut });
+  pushEvent("newlight_cta_click", {
+    cta_location: location,
+    phase,
+    sold_out: NEW_LIGHT.soldOut,
+    nl_code: code,
+    nl_origin: newLightOrigin(),
+  });
 };
 
 /** Vitrina de NEW LIGHT dentro del hero del inicio. Se oculta sola después del 31-dic. */
@@ -101,10 +149,10 @@ const NewLightShowcase = ({ phase }: { phase: "launch" | "regular" }) => {
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
         <a
-          href={newLightWhatsAppHref(lang)}
+          href={newLightWhatsAppHref(lang, "hero")}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => trackNewLightClick("hero", phase)}
+          onClick={(e) => trackNewLightClick("hero", phase, e, lang)}
           className="inline-block w-full sm:w-auto font-body text-[10px] tracking-[0.35em] uppercase px-8 py-3.5 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-300"
         >
           {NEW_LIGHT.soldOut ? c.ctaSoldOut : c.cta}
