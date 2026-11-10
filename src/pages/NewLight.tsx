@@ -157,6 +157,10 @@ const NewLight = () => {
       address: ADDRESS,
       geo: { "@type": "GeoCoordinates", latitude: 10.423, longitude: -75.551 },
     },
+    performer: (lang === "en"
+      ? ["Live orchestra", "DJ", "Mulatas dance show"]
+      : ["Orquesta en vivo", "DJ", "Show de mulatas"]
+    ).map((name) => ({ "@type": "PerformingGroup", name })),
     organizer: {
       "@type": "Restaurant",
       name: "Sabine Bistro & Lounge",
