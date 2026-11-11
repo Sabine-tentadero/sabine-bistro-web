@@ -29,23 +29,30 @@ const ADDRESS = {
 
 const PAGE = {
   es: {
-    title: "NEW LIGHT · Fin de año en Cartagena 2026 | Sabine Bistro & Lounge, La Serrezuela",
+    title: "Fin de Año en Cartagena 2026 · Cena de San Silvestre | NEW LIGHT Sabine",
     description:
-      "Recibe el año nuevo en la Terraza del Ruedo de La Serrezuela: cena por tiempos, orquesta en vivo, DJ, show de mulatas y espumoso a medianoche. Desde $695.000 por persona. Reserva por WhatsApp.",
-    eyebrow: "31 · 12 · 26 · 7:30 p. m. · Terraza del Ruedo · Cartagena",
-    h1Small: "Fin de año en Cartagena",
+      "Fin de año en Cartagena en el Centro Histórico: cena de San Silvestre por tiempos, orquesta en vivo, DJ y espumoso a medianoche en Sabine, La Serrezuela. Reserva por WhatsApp.",
+    eventName: "NEW LIGHT · Cena de San Silvestre y fin de año en Cartagena 2026",
+    eyebrow: "Jueves 31 de diciembre de 2026 · 7:30 p. m. · Centro Histórico de Cartagena",
+    h1Small: "Fin de año en Cartagena 2026",
+    h1Sub: "New Year's Eve by Sabine · Cena de San Silvestre",
     tagline: "Una noche para celebrar un nuevo comienzo",
     orWrite: "o escríbenos al",
-    includesTitle: "Qué incluye",
+    introTitle: "Recibe el año nuevo en Cartagena en Sabine",
+    intro: [
+      "NEW LIGHT es la cena de San Silvestre de Sabine Bistro & Lounge para despedir el 2026 y recibir el 2027 en Cartagena. Es el jueves 31 de diciembre de 2026, de 7:30 p. m. a 2:00 a. m., en la Terraza del Ruedo del C.C. La Serrezuela, en el Centro Histórico.",
+      "La noche empieza con una cena de fin de año por tiempos, con charcutería y quesos para la mesa, y sigue como fiesta de fin de año con orquesta en vivo, DJ y show de mulatas. A medianoche, una copa de espumoso para brindar por el año nuevo.",
+    ],
+    includesTitle: "Qué incluye la cena de fin de año",
     includesIntro: "Todo lo que necesitas para despedir el 2026 en la mesa y en la pista.",
-    priceTitle: "Precio y reservas",
+    priceTitle: "Precio de la cena de San Silvestre 2026",
     priceIntro: "El valor es por persona. Aforo limitado.",
     launchLabel: "Precio de lanzamiento",
     launchWhen: "Hasta el 19 de noviembre",
     regularLabel: "Precio regular",
     regularWhen: "A partir del 20 de noviembre",
     current: "Vigente",
-    whereTitle: "Dónde",
+    whereTitle: "Dónde es: Centro Histórico de Cartagena",
     wherePlace: "Terraza del Ruedo · Sabine Bistro & Lounge",
     whereAddress: "C.C. La Serrezuela, Carrera 11 #39-21, Centro Histórico de Cartagena",
     directions: "Cómo llegar",
@@ -59,35 +66,44 @@ const PAGE = {
       ["sabine-bar-lounge", "Bar y lounge de Sabine"],
       ["sabine-la-serrezuela-entrada", "Entrada de Sabine en La Serrezuela, Cartagena"],
     ] as [string, string][],
-    faqTitle: "Preguntas frecuentes",
+    faqTitle: "Preguntas frecuentes sobre el fin de año en Sabine",
     faq: [
-      ["¿Cuándo es NEW LIGHT?", "El 31 de diciembre de 2026, de 7:30 p. m. a 2:00 a. m., para recibir el 2027."],
-      ["¿Dónde es?", "En la Terraza del Ruedo de Sabine Bistro & Lounge, en el C.C. La Serrezuela, Centro Histórico de Cartagena."],
-      ["¿Cuánto cuesta?", "$695.000 por persona hasta el 19 de noviembre. Desde el 20 de noviembre, $745.000 por persona."],
+      ["¿Dónde recibir el año nuevo en Cartagena?", "En Sabine Bistro & Lounge, en el Centro Histórico, con NEW LIGHT: cena de San Silvestre por tiempos, orquesta en vivo, DJ y copa de espumoso a medianoche en la Terraza del Ruedo del C.C. La Serrezuela."],
+      ["¿Cuándo es la cena de San Silvestre 2026?", "El jueves 31 de diciembre de 2026, de 7:30 p. m. a 2:00 a. m., para recibir el 2027."],
+      ["¿Dónde es?", "En la Terraza del Ruedo de Sabine Bistro & Lounge, en el C.C. La Serrezuela, Carrera 11 #39-21, Centro Histórico de Cartagena."],
+      ["¿Cuánto cuesta la cena de fin de año?", "$695.000 por persona hasta el 19 de noviembre. Desde el 20 de noviembre, $745.000 por persona."],
       ["¿Qué incluye?", "Cena gastronómica por tiempos, charcutería y quesos para la mesa, orquesta en vivo, DJ, show de mulatas, cotillones, globo o ritual de deseos y una copa de espumoso a medianoche."],
+      ["¿Es una cena o una fiesta de fin de año?", "Las dos: la noche empieza con la cena por tiempos y sigue con orquesta en vivo y DJ hasta las 2:00 a. m."],
       ["¿Cómo reservo?", `Por WhatsApp al ${NEW_LIGHT.whatsappDisplay}. El aforo es limitado.`],
     ] as [string, string][],
     finalTitle: "El nuevo año comienza aquí",
     backHome: "Volver al inicio",
   },
   en: {
-    title: "NEW LIGHT · New Year's Eve in Cartagena 2026 | Sabine Bistro & Lounge, La Serrezuela",
+    title: "New Year's Eve in Cartagena 2026 · NYE Dinner & Party | NEW LIGHT Sabine",
     description:
-      "Ring in the new year at Terraza del Ruedo, La Serrezuela: multi-course dinner, live orchestra, DJ, mulatas dance show and sparkling wine at midnight. From COP 695,000 per person. Book on WhatsApp.",
-    eyebrow: "12 · 31 · 26 · 7:30 p.m. · Terraza del Ruedo · Cartagena",
-    h1Small: "New Year's Eve in Cartagena",
+      "New Year's Eve in Cartagena's Old Town: multi-course dinner, live orchestra, DJ and a midnight sparkling wine toast at Sabine, La Serrezuela. Book on WhatsApp.",
+    eventName: "NEW LIGHT · New Year's Eve dinner and party in Cartagena 2026",
+    eyebrow: "Thursday, December 31, 2026 · 7:30 p.m. · Cartagena Old Town",
+    h1Small: "New Year's Eve in Cartagena 2026",
+    h1Sub: "New Year's Eve by Sabine · Dinner & Party",
     tagline: "A night to celebrate a new beginning",
     orWrite: "or message us at",
-    includesTitle: "What's included",
+    introTitle: "Ring in the new year in Cartagena at Sabine",
+    intro: [
+      "NEW LIGHT is Sabine Bistro & Lounge's New Year's Eve dinner and party in Cartagena. It takes place on Thursday, December 31, 2026, from 7:30 p.m. to 2:00 a.m., at Terraza del Ruedo in La Serrezuela, in the heart of the Old Town.",
+      "The night starts with a multi-course dinner, with charcuterie and cheese for the table, and turns into a New Year's Eve party with a live orchestra, DJ and a mulatas dance show. At midnight, a glass of sparkling wine to toast the new year.",
+    ],
+    includesTitle: "What's included in the NYE dinner",
     includesIntro: "Everything you need to say goodbye to 2026, at the table and on the dance floor.",
-    priceTitle: "Price and reservations",
+    priceTitle: "New Year's Eve 2026 price",
     priceIntro: "Prices are per person. Limited capacity.",
     launchLabel: "Launch price",
     launchWhen: "Until November 19",
     regularLabel: "Regular price",
     regularWhen: "From November 20",
     current: "Current",
-    whereTitle: "Where",
+    whereTitle: "Where: Cartagena Old Town",
     wherePlace: "Terraza del Ruedo · Sabine Bistro & Lounge",
     whereAddress: "La Serrezuela mall, Carrera 11 #39-21, Cartagena Old Town",
     directions: "Get directions",
@@ -101,11 +117,13 @@ const PAGE = {
       ["sabine-bar-lounge", "Sabine bar and lounge"],
       ["sabine-la-serrezuela-entrada", "Sabine entrance at La Serrezuela, Cartagena"],
     ] as [string, string][],
-    faqTitle: "Frequently asked questions",
+    faqTitle: "New Year's Eve at Sabine: frequently asked questions",
     faq: [
-      ["When is NEW LIGHT?", "On December 31, 2026, from 7:30 p.m. to 2:00 a.m., to welcome 2027."],
-      ["Where is it?", "At Terraza del Ruedo, Sabine Bistro & Lounge, La Serrezuela mall, Cartagena Old Town."],
-      ["How much is it?", "COP 695,000 per person until November 19. From November 20, COP 745,000 per person."],
+      ["Where to spend New Year's Eve in Cartagena?", "At Sabine Bistro & Lounge in the Old Town, with NEW LIGHT: a multi-course dinner, live orchestra, DJ and a midnight sparkling wine toast at Terraza del Ruedo, La Serrezuela."],
+      ["When is NEW LIGHT?", "On Thursday, December 31, 2026, from 7:30 p.m. to 2:00 a.m., to welcome 2027."],
+      ["Where is it?", "At Terraza del Ruedo, Sabine Bistro & Lounge, La Serrezuela mall, Carrera 11 #39-21, Cartagena Old Town."],
+      ["How much is the New Year's Eve dinner?", "COP 695,000 per person until November 19. From November 20, COP 745,000 per person."],
+      ["Is it a dinner or a party?", "Both: the night starts with a multi-course dinner and continues with a live orchestra and DJ until 2:00 a.m."],
       ["What's included?", "A multi-course gastronomic dinner, charcuterie and cheese for the table, live orchestra, DJ, mulatas dance show, party favors, a wish balloon ritual and a glass of sparkling wine at midnight."],
       ["How do I book?", `On WhatsApp at ${NEW_LIGHT.whatsappDisplay}. Capacity is limited.`],
     ] as [string, string][],
@@ -142,7 +160,7 @@ const NewLight = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Event",
-    name: "NEW LIGHT · New Year's Eve by Sabine",
+    name: p.eventName,
     description: p.description,
     url: canonical,
     inLanguage: lang,
@@ -213,12 +231,11 @@ const NewLight = () => {
                 {p.eyebrow}
               </p>
               <h1 className="mb-5">
+                <span className="block font-elegant text-xl sm:text-2xl text-foreground/90 mb-3">{p.h1Small}</span>
                 <span className="block font-display text-5xl sm:text-6xl lg:text-7xl font-light tracking-[0.14em] text-foreground leading-none">
                   NEW LIGHT
                 </span>
-                <span className="block font-elegant italic text-lg sm:text-xl text-foreground/75 mt-3">
-                  New Year's Eve by Sabine · {p.h1Small}
-                </span>
+                <span className="block font-elegant italic text-lg sm:text-xl text-foreground/75 mt-3">{p.h1Sub}</span>
               </h1>
               <p className="font-display italic text-2xl sm:text-3xl text-foreground/90 leading-snug mb-5">
                 {p.tagline}
@@ -262,6 +279,16 @@ const NewLight = () => {
                 </picture>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Introducción (texto para buscadores y asistentes de IA) */}
+        <section className="py-14 md:py-20 px-5 sm:px-6 border-t border-foreground/10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-display text-3xl sm:text-4xl font-light text-foreground mb-6">{p.introTitle}</h2>
+            {p.intro.map((t) => (
+              <p key={t} className="font-elegant text-lg text-foreground/80 leading-relaxed mb-4">{t}</p>
+            ))}
           </div>
         </section>
 
