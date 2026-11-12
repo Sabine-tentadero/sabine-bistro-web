@@ -1,4 +1,4 @@
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoGold from "@/assets/logo-gold-transparent.png";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -28,6 +28,7 @@ const Footer = ({ hideFloatingButtons = false }: FooterProps) => {
           <div className="flex gap-6 mb-12">
             <a
               href="https://www.instagram.com/sabinebistro/"
+              aria-label="Instagram de Sabine Bistró"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/20 hover:text-primary transition-colors duration-500"
@@ -36,11 +37,21 @@ const Footer = ({ hideFloatingButtons = false }: FooterProps) => {
             </a>
             <a
               href="https://www.facebook.com/sabinebistro/"
+              aria-label="Facebook de Sabine Bistró"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/20 hover:text-primary transition-colors duration-500"
             >
               <Facebook size={16} />
+            </a>
+            <a
+              href="https://www.youtube.com/@SabineBistro"
+              aria-label="YouTube de Sabine Bistró"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/20 hover:text-primary transition-colors duration-500"
+            >
+              <Youtube size={16} />
             </a>
           </div>
 
